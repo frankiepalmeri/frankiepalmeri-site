@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="Geometric eagle eye emblem">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#ff1a1a"/>
+      <stop offset="100%" stop-color="#7a0000"/>
+    </linearGradient>
+  </defs>
+  <!-- Outer diamond / shield -->
+  <polygon points="100,8 192,100 100,192 8,100" fill="none" stroke="#ff1a1a" stroke-width="4"/>
+  <polygon points="100,28 172,100 100,172 28,100" fill="#0a0a0a" stroke="#c40000" stroke-width="2"/>
+  <!-- Eagle wings (geometric, original) -->
+  <path d="M100 70 L40 95 L55 110 L100 95 Z" fill="url(#g)"/>
+  <path d="M100 70 L160 95 L145 110 L100 95 Z" fill="url(#g)"/>
+  <!-- Body / chevron -->
+  <polygon points="100,80 120,130 100,155 80,130" fill="#ff2a2a"/>
+  <!-- Central eye -->
+  <ellipse cx="100" cy="108" rx="28" ry="18" fill="#1a0000" stroke="#ff4444" stroke-width="3"/>
+  <circle cx="100" cy="108" r="10" fill="#ff1a1a"/>
+  <circle cx="100" cy="108" r="4" fill="#fff"/>
+  <!-- Crown spikes -->
+  <polygon points="100,42 108,68 92,68" fill="#ff1a1a"/>
+  <polygon points="78,50 88,72 70,68" fill="#c40000"/>
+  <polygon points="122,50 130,68 112,72" fill="#c40000"/>
+</svg>

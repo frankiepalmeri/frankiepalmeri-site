@@ -1,308 +1,166 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="mix1">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Frankie Palmeri</title>
   <meta name="description" content="Frankie Palmeri — live stream, merch, Amazon picks, and support." />
-  <style>
-    :root {
-      --bg: #0b0b0c;
-      --panel: #151518;
-      --text: #f3f3f5;
-      --muted: #a0a0ab;
-      --accent: #e8ff47;
-      --border: #2a2a32;
-    }
-    * { box-sizing: border-box; }
-    body {
-      margin: 0;
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
-      background: radial-gradient(1200px 600px at 50% -10%, #1c1c24, var(--bg));
-      color: var(--text);
-      line-height: 1.45;
-    }
-    a { color: inherit; }
-    header {
-      max-width: 1180px;
-      margin: 0 auto;
-      padding: 28px 20px 8px;
-      display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-      gap: 12px;
-      flex-wrap: wrap;
-    }
-    header h1 {
-      margin: 0;
-      font-size: 1.35rem;
-      letter-spacing: 0.04em;
-      text-transform: uppercase;
-    }
-    nav {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 14px;
-    }
-    nav a {
-      color: var(--muted);
-      text-decoration: none;
-      font-size: 0.92rem;
-    }
-    nav a:hover { color: var(--accent); }
-    main { max-width: 1180px; margin: 0 auto; padding: 8px 20px 64px; }
-    section {
-      background: var(--panel);
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      padding: 18px;
-      margin: 18px 0;
-    }
-    section h2 {
-      margin: 0 0 12px;
-      font-size: 0.95rem;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: var(--muted);
-    }
-    .stream-layout {
-      display: grid;
-      grid-template-columns: minmax(0, 1fr) 340px;
-      gap: 12px;
-      align-items: stretch;
-    }
-    @media (max-width: 900px) {
-      .stream-layout { grid-template-columns: 1fr; }
-      .chat-wrap { min-height: 420px; }
-    }
-    .player-wrap {
-      position: relative;
-      width: 100%;
-      padding-top: 56.25%;
-      background: #000;
-      border-radius: 12px;
-      overflow: hidden;
-    }
-    .chat-wrap {
-      position: relative;
-      min-height: 100%;
-      background: #0e0e10;
-      border-radius: 12px;
-      overflow: hidden;
-      border: 1px solid var(--border);
-    }
-    .player-wrap iframe,
-    .player-wrap .offline,
-    .chat-wrap iframe {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      border: 0;
-    }
-    .offline {
-      display: grid;
-      place-items: center;
-      text-align: center;
-      padding: 24px;
-      background: linear-gradient(160deg, #12121a, #000);
-    }
-    .offline strong { display: block; font-size: 1.4rem; margin-bottom: 8px; }
-    .offline span { color: var(--muted); }
-    .stream-links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 12px;
-    }
-    .stream-links a {
-      color: var(--muted);
-      text-decoration: none;
-      font-size: 0.9rem;
-      border: 1px solid var(--border);
-      border-radius: 999px;
-      padding: 8px 12px;
-    }
-    .stream-links a:hover {
-      color: var(--accent);
-      border-color: var(--accent);
-    }
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
-      gap: 14px;
-    }
-    .card {
-      display: block;
-      text-decoration: none;
-      color: inherit;
-      background: #0f0f13;
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      overflow: hidden;
-      transition: transform 0.15s ease, border-color 0.15s ease;
-    }
-    .card:hover { transform: translateY(-2px); border-color: var(--accent); }
-    .card .img {
-      aspect-ratio: 1;
-      background: #22222a center/cover no-repeat;
-    }
-    .card .label { padding: 10px 12px; font-size: 0.92rem; }
-    .donate {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
-    .donate a {
-      display: inline-block;
-      padding: 12px 16px;
-      border-radius: 999px;
-      text-decoration: none;
-      color: #0b0b0c;
-      background: var(--accent);
-      font-weight: 700;
-    }
-    .donate a.secondary {
-      background: transparent;
-      color: var(--text);
-      border: 1px solid var(--border);
-    }
-    .note { color: var(--muted); font-size: 0.9rem; margin-top: 10px; }
-    footer {
-      max-width: 1180px;
-      margin: 0 auto;
-      padding: 0 20px 40px;
-      color: var(--muted);
-      font-size: 0.85rem;
-    }
-  </style>
+  <meta name="theme-color" content="#020803" />
+  <link rel="icon" href="merch/frankie-anime-head.png" type="image/png" />
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <header>
-    <h1>Frankie Palmeri</h1>
-    <nav>
-      <a href="#live">Live</a>
-      <a href="#merch">Merch</a>
-      <a href="#amazon">Amazon</a>
-      <a href="#support">Donate</a>
-      <a href="https://frankie-head-shop.printify.me" target="_blank" rel="noopener">Shop</a>
-    </nav>
-  </header>
+  <div class="scanlines" aria-hidden="true"></div>
+  <div class="esoteric-layer" id="esoteric" aria-hidden="true"></div>
 
-  <main>
-    <section id="live" aria-label="Live stream">
-      <h2>Live</h2>
-      <div class="stream-layout">
-        <div class="player-wrap" id="player">
-          <div class="offline" id="offline">
-            <div>
-              <strong>Currently offline</strong>
-              <span>Stream will appear here when Frankie goes live.</span>
+  <div class="wrap">
+    <header class="site-header">
+      <div class="brand">
+        <img class="brand-mark" src="merch/frankie-anime-head.png" alt="Frankie Head" width="48" height="48" />
+        <img class="emblem" src="assets/emblem.svg" alt="" width="56" height="56" />
+        <div>
+          <p class="propaganda">ORDER · STRENGTH · SIGNAL</p>
+          <h1 class="brand-title">Frankie Palmeri</h1>
+          <p class="brand-sub">live · merch · picks · support</p>
+        </div>
+      </div>
+      <nav class="main-nav" aria-label="Primary">
+        <a href="#live">Live</a>
+        <a href="#merch">Merch</a>
+        <a href="#amazon">Amazon</a>
+        <a href="#support">Donate</a>
+        <a href="https://frankie-head-shop.printify.me" target="_blank" rel="noopener">Shop</a>
+        <div class="theme-switch" role="group" aria-label="Theme mix">
+          <button type="button" data-theme="mix1" aria-pressed="true">Mix 1</button>
+          <button type="button" data-theme="mix2" aria-pressed="false">Mix 2</button>
+          <button type="button" data-theme="mix3" aria-pressed="false">Mix 3</button>
+        </div>
+      </nav>
+    </header>
+
+    <pre class="ascii-banner" aria-hidden="true">
+███████╗██████╗  █████╗ ███╗   ██╗██╗  ██╗██╗███████╗
+██╔════╝██╔══██╗██╔══██╗████╗  ██║██║ ██╔╝██║██╔════╝
+█████╗  ██████╔╝███████║██╔██╗ ██║█████╔╝ ██║█████╗
+██╔══╝  ██╔══██╗██╔══██║██║╚██╗██║██╔═██╗ ██║██╔══╝
+██║     ██║  ██║██║  ██║██║ ╚████║██║  ██╗██║███████╗
+╚═╝     ╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═══╝╚═╝  ╚═╝╚═╝╚══════╝
+    </pre>
+
+    <main>
+      <section class="panel" id="live" aria-label="Live stream">
+        <h2>Live</h2>
+        <div class="stream-layout">
+          <div class="player-wrap" id="player"></div>
+          <div class="chat-wrap" id="chat" aria-label="Twitch chat"></div>
+        </div>
+        <div class="stream-links">
+          <a id="twitch-channel" href="https://www.twitch.tv/frankiepalmeri" target="_blank" rel="noopener">Open on Twitch</a>
+        </div>
+        <p class="note">Player + chat embed for <code>frankiepalmeri</code>. Parents include apex, www, and github.io.</p>
+      </section>
+
+      <section class="panel" id="merch" aria-label="Merchandise">
+        <h2>Merch</h2>
+        <div class="grid">
+          <a class="card" href="https://frankie-head-shop.printify.me/product/32472541" target="_blank" rel="noopener">
+            <div class="thumb"><img src="merch/tote-front.jpg" alt="Frankie Head Tote mockup" width="400" height="400" loading="lazy" /></div>
+            <div class="meta">
+              <span class="name">Frankie Head Tote</span>
+              <span class="desc">24″ × 13″ weekender · all-over print</span>
+              <span class="price">$43.99</span>
             </div>
-          </div>
+          </a>
+          <a class="card" href="https://frankie-head-shop.printify.me/product/32472439" target="_blank" rel="noopener">
+            <div class="thumb"><img src="merch/sticker-front.jpg" alt="Frankie Head Sticker mockup" width="400" height="400" loading="lazy" /></div>
+            <div class="meta">
+              <span class="name">Frankie Head Sticker</span>
+              <span class="desc">Die-cut vinyl · 2″ × 2″</span>
+              <span class="price">$6.30</span>
+            </div>
+          </a>
+          <a class="card" href="https://frankie-head-shop.printify.me/product/32472399" target="_blank" rel="noopener">
+            <div class="thumb"><img src="merch/phone-front.jpg" alt="Frankie Head Phone Case mockup" width="400" height="400" loading="lazy" /></div>
+            <div class="meta">
+              <span class="name">Frankie Head Phone Case</span>
+              <span class="desc">Slim glossy · wireless charge OK</span>
+              <span class="price">$24.99</span>
+            </div>
+          </a>
+          <a class="card shop-all" href="https://frankie-head-shop.printify.me" target="_blank" rel="noopener">
+            <div class="thumb" aria-hidden="true">→</div>
+            <div class="meta">
+              <span class="name">Shop all</span>
+              <span class="desc">Printify Pop-Up storefront</span>
+              <span class="price">Browse →</span>
+            </div>
+          </a>
         </div>
-        <div class="chat-wrap" id="chat" aria-label="Twitch chat">
-          <!-- Twitch chat iframe mounted by script -->
+        <p class="note">Real Printify mockups. Checkout on Printify Pop-Up.</p>
+      </section>
+
+      <section class="panel" id="amazon" aria-label="Amazon picks">
+        <h2>Amazon picks</h2>
+        <div class="grid">
+          <a class="card" href="https://www.amazon.com/dp/B00SAYCXWG/?tag=frankiepalmer-20" target="_blank" rel="noopener sponsored">
+            <div class="thumb"><img src="amazon/hyperx-cloud-ii.jpg" alt="HyperX Cloud II gaming headset" width="400" height="400" loading="lazy" /></div>
+            <div class="meta">
+              <span class="name">HyperX Cloud II</span>
+              <span class="desc">Gaming headset · stream staple</span>
+              <span class="price">See price on Amazon</span>
+            </div>
+          </a>
+          <a class="card" href="https://www.amazon.com/dp/B087LXCTFJ/?tag=frankiepalmer-20" target="_blank" rel="noopener sponsored">
+            <div class="thumb"><img src="amazon/gpro-superlight.jpg" alt="Logitech G Pro X Superlight mouse" width="400" height="400" loading="lazy" /></div>
+            <div class="meta">
+              <span class="name">G Pro X Superlight</span>
+              <span class="desc">Wireless gaming mouse</span>
+              <span class="price">See price on Amazon</span>
+            </div>
+          </a>
+          <a class="card" href="https://www.amazon.com/s?k=black+fleece+hoodie+men&amp;tag=frankiepalmer-20" target="_blank" rel="noopener sponsored">
+            <div class="thumb"><img src="amazon/champion-hoodie.jpg" alt="Black fleece hoodie pick" width="400" height="400" loading="lazy" /></div>
+            <div class="meta">
+              <span class="name">Black Fleece Hoodie</span>
+              <span class="desc">Streetwear basic · search link</span>
+              <span class="price">See price on Amazon</span>
+            </div>
+          </a>
+          <a class="card" href="https://www.amazon.com/s?k=elgato+wave+3+microphone&amp;tag=frankiepalmer-20" target="_blank" rel="noopener sponsored">
+            <div class="thumb"><img src="amazon/pick-mic.jpg" alt="USB condenser microphone pick" width="400" height="400" loading="lazy" /></div>
+            <div class="meta">
+              <span class="name">USB Condenser Mic</span>
+              <span class="desc">Streamer mic vibe · search link</span>
+              <span class="price">See price on Amazon</span>
+            </div>
+          </a>
         </div>
-      </div>
-      <div class="stream-links">
-        <a id="twitch-channel" href="https://www.twitch.tv/frankiepalmeri" target="_blank" rel="noopener">Open on Twitch</a>
-      </div>
-      <p class="note">Player + chat embed on this page. Chat needs the same domain parent as the player (handled automatically).</p>
-    </section>
+        <div class="asin-gap">
+          <strong>ASIN status:</strong> Previous site had no product ASINs — only affiliate tag <code>frankiepalmer-20</code>.
+          Locked for review:
+          <code>B00SAYCXWG</code> (HyperX Cloud II — real product image),
+          <code>B087LXCTFJ</code> (Logitech G Pro X Superlight — real product image).
+          Hoodie + USB mic cards use tagged Amazon <em>search</em> links (no locked ASIN) with styled placeholder images — replace with confirmed ASINs when Frankie picks them.
+        </div>
+        <p class="note">As an Amazon Associate I earn from qualifying purchases. Tag: <code>frankiepalmer-20</code>.</p>
+      </section>
 
-    <section id="merch" aria-label="Merchandise">
-      <h2>Merch</h2>
-      <div class="grid">
-        <a class="card" href="https://frankie-head-shop.printify.me/product/32472541" target="_blank" rel="noopener">
-          <div class="img" style="background-image:url('merch/frankie-anime-head.png');background-color:#1a1a22"></div>
-          <div class="label">Tote — $43.99</div>
-        </a>
-        <a class="card" href="https://frankie-head-shop.printify.me/product/32472439" target="_blank" rel="noopener">
-          <div class="img" style="background-image:url('merch/frankie-anime-head.png');background-color:#1a1a22"></div>
-          <div class="label">Sticker — $6.30</div>
-        </a>
-        <a class="card" href="https://frankie-head-shop.printify.me/product/32472399" target="_blank" rel="noopener">
-          <div class="img" style="background-image:url('merch/frankie-anime-head.png');background-color:#1a1a22"></div>
-          <div class="label">Phone case — $24.99</div>
-        </a>
-        <a class="card" href="https://frankie-head-shop.printify.me" target="_blank" rel="noopener">
-          <div class="img" style="background-image:linear-gradient(135deg,#333,#111)"></div>
-          <div class="label">Shop all →</div>
-        </a>
-      </div>
-      <p class="note">Checkout is on Printify Pop-Up for now. Big Cartel can wait until volume justifies Platinum.</p>
-    </section>
+      <section class="panel" id="support" aria-label="Support">
+        <h2>Support / donate</h2>
+        <div class="donate">
+          <a href="https://paypal.me/frankiepalmeri" target="_blank" rel="noopener">Donate via PayPal</a>
+          <a class="secondary" href="https://www.twitch.tv/frankiepalmeri" target="_blank" rel="noopener">Support on Twitch</a>
+        </div>
+        <p class="note">PayPal.me/frankiepalmeri is live.</p>
+      </section>
+    </main>
 
-    <section id="amazon" aria-label="Amazon picks">
-      <h2>Amazon picks</h2>
-      <div class="grid">
-        <a class="card" href="https://www.amazon.com/?tag=frankiepalmer-20" target="_blank" rel="noopener sponsored">
-          <div class="img" style="background-image:linear-gradient(135deg,#444,#1a1a1a)"></div>
-          <div class="label">Shop my Amazon picks</div>
-        </a>
-      </div>
-      <p class="note">Affiliate tag <code>frankiepalmer-20</code>. Swap this card for specific product ASIN links when ready.</p>
-    </section>
+    <footer class="site-footer">
+      © <span id="y"></span> Frankie Palmeri · Mix themes save in your browser ·
+      As an Amazon Associate I earn from qualifying purchases.
+    </footer>
+  </div>
 
-    <section id="support" aria-label="Support">
-      <h2>Support / donate</h2>
-      <div class="donate">
-        <a href="https://paypal.me/frankiepalmeri" target="_blank" rel="noopener">Donate via PayPal</a>
-        <a class="secondary" href="https://www.twitch.tv/frankiepalmeri" target="_blank" rel="noopener">Support on Twitch</a>
-      </div>
-      <p class="note">PayPal is live. Cash App / crypto can wait.</p>
-    </section>
-  </main>
-
-  <footer>© <span id="y"></span> Frankie Palmeri · As an Amazon Associate I earn from qualifying purchases.</footer>
-
-  <script>
-    document.getElementById('y').textContent = new Date().getFullYear();
-
-    const TWITCH_USER = 'frankiepalmeri';
-
-    function embedParents() {
-      // Twitch requires parent= to match the embedding page hostname.
-      // Pass common aliases so apex / www / github.io previews all work.
-      const hosts = new Set([
-        location.hostname || 'localhost',
-        'frankiepalmeri.com',
-        'www.frankiepalmeri.com',
-        'localhost',
-        '127.0.0.1'
-      ]);
-      return Array.from(hosts)
-        .filter(Boolean)
-        .map(h => 'parent=' + encodeURIComponent(h))
-        .join('&');
-    }
-
-    function mountTwitch(user) {
-      if (!user) return;
-      const parents = embedParents();
-
-      const player = document.getElementById('player');
-      player.innerHTML = '';
-      const playerFrame = document.createElement('iframe');
-      playerFrame.src = 'https://player.twitch.tv/?channel=' + encodeURIComponent(user) + '&' + parents + '&muted=true';
-      playerFrame.allowFullscreen = true;
-      playerFrame.allow = 'autoplay; fullscreen';
-      playerFrame.title = 'Twitch live stream';
-      player.appendChild(playerFrame);
-
-      const chat = document.getElementById('chat');
-      chat.innerHTML = '';
-      const chatFrame = document.createElement('iframe');
-      chatFrame.src = 'https://www.twitch.tv/embed/' + encodeURIComponent(user) + '/chat?' + parents + '&darkpopout';
-      chatFrame.title = 'Twitch chat';
-      chat.appendChild(chatFrame);
-
-      const link = document.getElementById('twitch-channel');
-      if (link) link.href = 'https://www.twitch.tv/' + encodeURIComponent(user);
-    }
-
-    mountTwitch(TWITCH_USER);
-  </script>
+  <script src="site.js"></script>
 </body>
 </html>

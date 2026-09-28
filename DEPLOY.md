@@ -113,3 +113,17 @@ Do this **after** Pages/Netlify/Cloudflare shows the site live on a preview URL.
 - **Stream/chat:** Twitch embeds for channel `frankiepalmeri`
 
 No Big Cartel Platinum required for this setup.
+
+
+---
+
+## Site structure (after aesthetic rebuild)
+
+- `index.html` — homepage (Twitch, merch, Amazon, donate)
+- `styles.css` — MIX 1 / MIX 2 / MIX 3 themes
+- `site.js` — Twitch embeds + theme switcher (`localStorage` key `fp-theme-mix`)
+- `merch/` — Frankie head art + Printify product mockups (`tote-front.jpg`, `sticker-front.jpg`, `phone-front.jpg`)
+- `amazon/` — affiliate product card images
+- `assets/emblem.svg` — original geometric eagle/eye emblem for MIX 2 (not copyrighted SF art)
+
+Preview locally: `python3 -m http.server 8080` from this folder, then open `http://localhost:8080`.
