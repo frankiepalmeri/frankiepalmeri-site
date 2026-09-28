@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" fill="none" preserveAspectRatio="none">
+  <defs>
+    <linearGradient id="mxGlow" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#39ff14" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#00aa44" stop-opacity="0.4"/>
+    </linearGradient>
+  </defs>
+  <!-- outer bezel -->
+  <rect x="4" y="4" width="792" height="442" rx="2" stroke="#1a5c2a" stroke-width="2" fill="none"/>
+  <rect x="10" y="10" width="780" height="430" stroke="#39ff14" stroke-width="1.5" fill="none" opacity="0.85"/>
+  <!-- corner brackets -->
+  <path d="M10 40 V18 H40" stroke="#39ff14" stroke-width="3"/>
+  <path d="M790 40 V18 H760" stroke="#39ff14" stroke-width="3"/>
+  <path d="M10 410 V432 H40" stroke="#39ff14" stroke-width="3"/>
+  <path d="M790 410 V432 H760" stroke="#39ff14" stroke-width="3"/>
+  <!-- inner tick marks -->
+  <path d="M60 10 V22 M120 10 V18 M200 10 V22" stroke="#39ff14" stroke-width="1" opacity="0.6"/>
+  <path d="M740 10 V22 M680 10 V18 M600 10 V22" stroke="#39ff14" stroke-width="1" opacity="0.6"/>
+  <!-- status LEDs -->
+  <circle cx="28" cy="28" r="3" fill="#39ff14"/>
+  <circle cx="42" cy="28" r="3" fill="#ff00aa" opacity="0.8"/>
+  <circle cx="56" cy="28" r="3" fill="#39ff14" opacity="0.45"/>
+  <!-- scanline hint -->
+  <line x1="14" y1="225" x2="786" y2="225" stroke="#39ff14" stroke-width="0.5" opacity="0.15"/>
+</svg>

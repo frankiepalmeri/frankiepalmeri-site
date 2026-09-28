@@ -56,6 +56,133 @@
     if (link) link.href = 'https://www.twitch.tv/' + encodeURIComponent(user);
   }
 
+  /* ===== Dense Matrix rain (Mix 1) ===== */
+  const MATRIX_GLYPHS =
+    'アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン' +
+    'ｱｲｳｴｵｶｷｸｹｺｻｼｽｾｿﾀﾁﾂﾃﾄﾅﾆﾇﾈﾉﾊﾋﾌﾍﾎﾏﾐﾑﾒﾓﾔﾕﾖﾗﾘﾙﾚﾛﾜﾝ' +
+    '0123456789ABCDEF<>[]{}|/\\$#@%&*=+~^:;.';
+
+  let rainRaf = 0;
+  let rainCtx = null;
+  let rainCols = [];
+  let rainW = 0;
+  let rainH = 0;
+  let rainFont = 14;
+  let rainActive = false;
+
+  function resizeRain() {
+    const canvas = document.getElementById('matrix-rain');
+    if (!canvas) return;
+    const dpr = Math.min(window.devicePixelRatio || 1, 2);
+    rainW = window.innerWidth;
+    rainH = window.innerHeight;
+    canvas.width = Math.floor(rainW * dpr);
+    canvas.height = Math.floor(rainH * dpr);
+    canvas.style.width = rainW + 'px';
+    canvas.style.height = rainH + 'px';
+    rainCtx = canvas.getContext('2d');
+    rainCtx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    rainFont = rainW < 640 ? 11 : rainW < 1100 ? 13 : 15;
+    const colCount = Math.ceil(rainW / (rainFont * 0.72));
+    const prev = rainCols;
+    rainCols = new Array(colCount);
+    for (let i = 0; i < colCount; i++) {
+      rainCols[i] = prev[i] || {
+        y: Math.random() * -rainH,
+        speed: 0.55 + Math.random() * 1.35,
+        len: 12 + Math.floor(Math.random() * 28),
+        seed: Math.floor(Math.random() * 10000)
+      };
+    }
+  }
+
+  function glyph(seed, row) {
+    const i = (seed * 131 + row * 17) % MATRIX_GLYPHS.length;
+    return MATRIX_GLYPHS.charAt(Math.abs(i));
+  }
+
+  function tickRain() {
+    if (!rainActive || !rainCtx) return;
+    // phosphor trail fade — denser feel
+    rainCtx.fillStyle = 'rgba(1, 6, 3, 0.085)';
+    rainCtx.fillRect(0, 0, rainW, rainH);
+    rainCtx.font = rainFont + 'px ui-monospace, SFMono-Regular, Menlo, Consolas, monospace';
+    rainCtx.textBaseline = 'top';
+
+    const step = rainFont * 0.95;
+    for (let i = 0; i < rainCols.length; i++) {
+      const col = rainCols[i];
+      const x = i * rainFont * 0.72;
+      const headRow = Math.floor(col.y / step);
+
+      for (let r = 0; r < col.len; r++) {
+        const row = headRow - r;
+        if (row < -2) continue;
+        const y = row * step;
+        if (y > rainH) continue;
+        const ch = glyph(col.seed + i, row + ((Date.now() / 80) | 0));
+        if (r === 0) {
+          rainCtx.fillStyle = '#d6ffd0';
+          rainCtx.shadowColor = '#39ff14';
+          rainCtx.shadowBlur = 10;
+        } else if (r < 3) {
+          rainCtx.fillStyle = '#39ff14';
+          rainCtx.shadowBlur = 4;
+        } else if (r < col.len * 0.45) {
+          rainCtx.fillStyle = 'rgba(57,255,20,0.85)';
+          rainCtx.shadowBlur = 0;
+        } else {
+          rainCtx.fillStyle = 'rgba(20,140,50,' + (0.55 - r / col.len * 0.4) + ')';
+          rainCtx.shadowBlur = 0;
+        }
+        rainCtx.fillText(ch, x, y);
+      }
+
+      col.y += col.speed * step * 0.22;
+      if (col.y - col.len * step > rainH) {
+        col.y = Math.random() * -rainH * 0.4;
+        col.speed = 0.55 + Math.random() * 1.35;
+        col.len = 12 + Math.floor(Math.random() * 28);
+        col.seed = Math.floor(Math.random() * 10000);
+      }
+    }
+    rainCtx.shadowBlur = 0;
+    rainRaf = requestAnimationFrame(tickRain);
+  }
+
+  function startRain() {
+    const canvas = document.getElementById('matrix-rain');
+    if (!canvas) return;
+    rainActive = true;
+    resizeRain();
+    // seed opaque first paint so trails build denser
+    if (rainCtx) {
+      rainCtx.fillStyle = '#010603';
+      rainCtx.fillRect(0, 0, rainW, rainH);
+    }
+    cancelAnimationFrame(rainRaf);
+    rainRaf = requestAnimationFrame(tickRain);
+  }
+
+  function stopRain() {
+    rainActive = false;
+    cancelAnimationFrame(rainRaf);
+    rainRaf = 0;
+    const canvas = document.getElementById('matrix-rain');
+    if (canvas && rainCtx) {
+      rainCtx.clearRect(0, 0, rainW, rainH);
+    }
+  }
+
+  let rainResizeBound = false;
+  function ensureRainResize() {
+    if (rainResizeBound) return;
+    rainResizeBound = true;
+    window.addEventListener('resize', () => {
+      if (rainActive) resizeRain();
+    });
+  }
+
   function setTheme(theme) {
     if (!THEMES.includes(theme)) theme = 'mix1';
     document.documentElement.setAttribute('data-theme', theme);
@@ -65,6 +192,21 @@
     document.querySelectorAll('.theme-switch button').forEach((btn) => {
       btn.setAttribute('aria-pressed', String(btn.dataset.theme === theme));
     });
+
+    const meta = document.querySelector('meta[name="theme-color"]');
+    if (meta) {
+      meta.setAttribute(
+        'content',
+        theme === 'mix1' ? '#010603' : theme === 'mix2' ? '#050000' : '#06020f'
+      );
+    }
+
+    if (theme === 'mix1') {
+      ensureRainResize();
+      startRain();
+    } else {
+      stopRain();
+    }
     if (theme === 'mix3') spawnEsoteric();
   }
 

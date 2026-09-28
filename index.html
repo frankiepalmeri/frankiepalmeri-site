@@ -11,15 +11,17 @@
 </head>
 <body>
   <div class="scanlines" aria-hidden="true"></div>
+  <canvas class="matrix-rain" id="matrix-rain" aria-hidden="true"></canvas>
   <div class="esoteric-layer" id="esoteric" aria-hidden="true"></div>
 
   <div class="wrap">
     <header class="site-header">
       <div class="brand">
-        <img class="brand-mark" src="merch/frankie-anime-head.png" alt="Frankie Head" width="48" height="48" />
-        <img class="emblem" src="assets/emblem.svg" alt="" width="56" height="56" />
+        <img class="brand-mark" src="merch/frankie-anime-head.png" alt="Frankie Head" width="44" height="44" />
+        <img class="emblem" src="assets/emblem.svg" alt="" width="48" height="48" />
         <div>
           <p class="propaganda">ORDER · STRENGTH · SIGNAL</p>
+          <p class="term-label" aria-hidden="true">root@signal:~#</p>
           <h1 class="brand-title">Frankie Palmeri</h1>
           <p class="brand-sub">live · merch · picks · support</p>
         </div>
@@ -46,22 +48,72 @@
 ██║     ██║  ██║██║  ██║██║ ╚████║██║  ██╗██║███████╗
 ╚═╝     ╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═══╝╚═╝  ╚═╝╚═╝╚══════╝
     </pre>
+    <pre class="ascii-rule" aria-hidden="true">════════════════════════════════════════════════════════════════</pre>
 
     <main>
       <section class="panel" id="live" aria-label="Live stream">
-        <h2>Live</h2>
+        <div class="panel-head">
+          <h2><span class="panel-mark" aria-hidden="true"></span>Live</h2>
+          <span class="panel-meta" aria-hidden="true">CHANNEL // frankiepalmeri</span>
+        </div>
         <div class="stream-layout">
-          <div class="player-wrap" id="player"></div>
-          <div class="chat-wrap" id="chat" aria-label="Twitch chat"></div>
+          <div class="stream-shell">
+            <div class="frame-overlay" aria-hidden="true">
+              <img class="frame-svg frame-mix1" src="assets/frame-matrix.svg" alt="" />
+              <img class="frame-svg frame-mix2" src="assets/frame-shadaloo.svg" alt="" />
+              <img class="frame-svg frame-mix3" src="assets/frame-esoteric.svg" alt="" />
+              <div class="frame-ascii" aria-hidden="true">
+                <span class="fa-tl">╔══</span><span class="fa-tr">══╗</span>
+                <span class="fa-bl">╚══</span><span class="fa-br">══╝</span>
+                <span class="fa-tag">[ STREAM_FEED ]</span>
+              </div>
+              <div class="frame-prop" aria-hidden="true">
+                <span class="fp-corner fp-tl"></span><span class="fp-corner fp-tr"></span>
+                <span class="fp-corner fp-bl"></span><span class="fp-corner fp-br"></span>
+                <span class="fp-tag">◆ SIGNAL UNIT</span>
+              </div>
+              <div class="frame-eso" aria-hidden="true">
+                <span class="fe-ring fe-tl"></span><span class="fe-ring fe-tr"></span>
+                <span class="fe-ring fe-bl"></span><span class="fe-ring fe-br"></span>
+                <span class="fe-tag">◉ VEIL OPEN</span>
+              </div>
+            </div>
+            <div class="player-wrap" id="player"></div>
+          </div>
+          <div class="stream-shell stream-shell--chat">
+            <div class="frame-overlay" aria-hidden="true">
+              <img class="frame-svg frame-mix1" src="assets/frame-matrix.svg" alt="" />
+              <img class="frame-svg frame-mix2" src="assets/frame-shadaloo.svg" alt="" />
+              <img class="frame-svg frame-mix3" src="assets/frame-esoteric.svg" alt="" />
+              <div class="frame-ascii" aria-hidden="true">
+                <span class="fa-tl">╔══</span><span class="fa-tr">══╗</span>
+                <span class="fa-bl">╚══</span><span class="fa-br">══╝</span>
+                <span class="fa-tag">[ CHAT_BUF ]</span>
+              </div>
+              <div class="frame-prop" aria-hidden="true">
+                <span class="fp-corner fp-tl"></span><span class="fp-corner fp-tr"></span>
+                <span class="fp-corner fp-bl"></span><span class="fp-corner fp-br"></span>
+                <span class="fp-tag">◆ COMMS</span>
+              </div>
+              <div class="frame-eso" aria-hidden="true">
+                <span class="fe-ring fe-tl"></span><span class="fe-ring fe-tr"></span>
+                <span class="fe-ring fe-bl"></span><span class="fe-ring fe-br"></span>
+                <span class="fe-tag">◉ ECHO</span>
+              </div>
+            </div>
+            <div class="chat-wrap" id="chat" aria-label="Twitch chat"></div>
+          </div>
         </div>
         <div class="stream-links">
           <a id="twitch-channel" href="https://www.twitch.tv/frankiepalmeri" target="_blank" rel="noopener">Open on Twitch</a>
         </div>
-        <p class="note">Player + chat embed for <code>frankiepalmeri</code>. Parents include apex, www, and github.io.</p>
       </section>
 
       <section class="panel" id="merch" aria-label="Merchandise">
-        <h2>Merch</h2>
+        <div class="panel-head">
+          <h2><span class="panel-mark" aria-hidden="true"></span>Merch</h2>
+          <span class="panel-meta" aria-hidden="true">PRINTIFY // FRANKIE HEAD</span>
+        </div>
         <div class="grid">
           <a class="card" href="https://frankie-head-shop.printify.me/product/32472541" target="_blank" rel="noopener">
             <div class="thumb"><img src="merch/tote-front.jpg" alt="Frankie Head Tote mockup" width="400" height="400" loading="lazy" /></div>
@@ -96,11 +148,13 @@
             </div>
           </a>
         </div>
-        <p class="note">Real Printify mockups. Checkout on Printify Pop-Up.</p>
       </section>
 
       <section class="panel" id="amazon" aria-label="Amazon picks">
-        <h2>Amazon picks</h2>
+        <div class="panel-head">
+          <h2><span class="panel-mark" aria-hidden="true"></span>Amazon picks</h2>
+          <span class="panel-meta" aria-hidden="true">AFFILIATE // frankiepalmer-20</span>
+        </div>
         <div class="grid">
           <a class="card" href="https://www.amazon.com/dp/B00SAYCXWG/?tag=frankiepalmer-20" target="_blank" rel="noopener sponsored">
             <div class="thumb"><img src="amazon/hyperx-cloud-ii.jpg" alt="HyperX Cloud II gaming headset" width="400" height="400" loading="lazy" /></div>
@@ -136,22 +190,22 @@
           </a>
         </div>
         <div class="asin-gap">
-          <strong>ASIN status:</strong> Previous site had no product ASINs — only affiliate tag <code>frankiepalmer-20</code>.
-          Locked for review:
-          <code>B00SAYCXWG</code> (HyperX Cloud II — real product image),
-          <code>B087LXCTFJ</code> (Logitech G Pro X Superlight — real product image).
-          Hoodie + USB mic cards use tagged Amazon <em>search</em> links (no locked ASIN) with styled placeholder images — replace with confirmed ASINs when Frankie picks them.
+          <strong>ASIN status:</strong>
+          Locked <code>B00SAYCXWG</code>, <code>B087LXCTFJ</code>.
+          Hoodie + mic use tagged search links until confirmed.
         </div>
-        <p class="note">As an Amazon Associate I earn from qualifying purchases. Tag: <code>frankiepalmer-20</code>.</p>
+        <p class="note">As an Amazon Associate I earn from qualifying purchases.</p>
       </section>
 
       <section class="panel" id="support" aria-label="Support">
-        <h2>Support / donate</h2>
+        <div class="panel-head">
+          <h2><span class="panel-mark" aria-hidden="true"></span>Support</h2>
+          <span class="panel-meta" aria-hidden="true">PAYPAL · TWITCH</span>
+        </div>
         <div class="donate">
           <a href="https://paypal.me/frankiepalmeri" target="_blank" rel="noopener">Donate via PayPal</a>
           <a class="secondary" href="https://www.twitch.tv/frankiepalmeri" target="_blank" rel="noopener">Support on Twitch</a>
         </div>
-        <p class="note">PayPal.me/frankiepalmeri is live.</p>
       </section>
     </main>
 

@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" fill="none" preserveAspectRatio="none">
+  <!-- angular propaganda poster frame -->
+  <polygon points="0,18 18,0 782,0 800,18 800,432 782,450 18,450 0,432" fill="none" stroke="#ff1a1a" stroke-width="3"/>
+  <polygon points="12,24 24,12 776,12 788,24 788,426 776,438 24,438 12,426" fill="none" stroke="#5a1010" stroke-width="1.5"/>
+  <!-- military corner chevrons -->
+  <path d="M0 0 L48 0 L0 48 Z" fill="#ff1a1a"/>
+  <path d="M800 0 L752 0 L800 48 Z" fill="#ff1a1a"/>
+  <path d="M0 450 L48 450 L0 402 Z" fill="#ff1a1a"/>
+  <path d="M800 450 L752 450 L800 402 Z" fill="#ff1a1a"/>
+  <!-- inner accent bars -->
+  <rect x="60" y="0" width="8" height="18" fill="#c40000"/>
+  <rect x="732" y="0" width="8" height="18" fill="#c40000"/>
+  <rect x="60" y="432" width="8" height="18" fill="#c40000"/>
+  <rect x="732" y="432" width="8" height="18" fill="#c40000"/>
+  <!-- emblem accent diamonds -->
+  <polygon points="400,6 412,18 400,30 388,18" fill="#ff1a1a"/>
+  <polygon points="400,420 412,432 400,444 388,432" fill="#ff1a1a"/>
+  <!-- side hash marks -->
+  <path d="M0 80 H14 M0 120 H10 M0 160 H14" stroke="#ff4444" stroke-width="2"/>
+  <path d="M800 80 H786 M800 120 H790 M800 160 H786" stroke="#ff4444" stroke-width="2"/>
+</svg>
