@@ -318,93 +318,42 @@ html[data-theme="study"] .graffiti-title { display: flex; }
 /* ===== GRAFFITI TITLE — FRANKIE PALMERI ===== */
 .graffiti-title {
   display: none;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 0;
-  margin: 6px 0 12px;
-  line-height: 0.88;
+  margin: 4px 0 14px;
   user-select: none;
   position: relative;
+  width: 100%;
+  max-width: 920px;
+  line-height: 0;
 }
-.graf-line {
+.graf-svg {
+  display: none;
+  width: 100%;
+  height: auto;
+  max-height: clamp(140px, 28vw, 280px);
+  object-fit: contain;
+  object-position: left center;
+  filter: drop-shadow(0 6px 18px rgba(0, 0, 0, 0.55));
+  pointer-events: none;
+}
+html[data-theme="ascii"] .graf-svg.graf-ascii,
+html[data-theme="base"] .graf-svg.graf-base,
+html[data-theme="study"] .graf-svg.graf-study {
   display: block;
-  font-family: Impact, Haettenschweiler, "Arial Black", "Arial Narrow Bold", sans-serif;
-  font-size: clamp(2.4rem, 9vw, 5.2rem);
-  font-weight: 900;
-  text-transform: uppercase;
-  letter-spacing: 0.02em;
-  color: var(--graf-1);
-  -webkit-text-stroke: 2px var(--graf-outline);
-  paint-order: stroke fill;
-  text-shadow:
-    3px 3px 0 var(--graf-outline),
-    6px 6px 0 color-mix(in srgb, var(--graf-2) 55%, transparent),
-    0 0 18px color-mix(in srgb, var(--graf-1) 55%, transparent),
-    0 0 40px color-mix(in srgb, var(--graf-2) 35%, transparent);
-  transform: skewX(-8deg) rotate(-1.5deg);
-  position: relative;
-}
-.graf-palmeri {
-  margin-left: clamp(0.4rem, 3vw, 1.8rem);
-  color: var(--graf-2);
-  transform: skewX(-6deg) rotate(1.2deg);
-  text-shadow:
-    3px 3px 0 var(--graf-outline),
-    6px 6px 0 color-mix(in srgb, var(--graf-1) 45%, transparent),
-    0 0 18px color-mix(in srgb, var(--graf-2) 55%, transparent),
-    0 0 40px color-mix(in srgb, var(--graf-1) 30%, transparent);
-}
-/* drip / tag accents via pseudo */
-.graf-frankie::after,
-.graf-palmeri::after {
-  content: "";
-  position: absolute;
-  left: 18%;
-  bottom: -10px;
-  width: 3px;
-  height: 14px;
-  background: var(--graf-1);
-  border-radius: 0 0 2px 2px;
-  box-shadow:
-    28px 4px 0 -1px var(--graf-1),
-    52px 0 0 0 var(--graf-2),
-    80px 6px 0 -2px var(--graf-1);
-  opacity: 0.85;
-}
-.graf-palmeri::after {
-  left: 22%;
-  background: var(--graf-2);
-}
-
-html[data-theme="ascii"] .graf-line {
-  font-family: var(--mono);
-  letter-spacing: -0.04em;
-  -webkit-text-stroke: 1.5px #003311;
-  filter: drop-shadow(0 0 8px #39ff1488);
-}
-html[data-theme="base"] .graf-line {
-  letter-spacing: 0.06em;
-  filter: drop-shadow(0 0 10px #ff1a1a99);
 }
 html[data-theme="base"] .graffiti-title::before {
   content: "";
   position: absolute;
   right: 2%;
-  top: 10%;
-  width: clamp(80px, 18vw, 160px);
-  height: clamp(46px, 10vw, 92px);
+  top: 8%;
+  width: clamp(72px, 16vw, 140px);
+  height: clamp(42px, 9vw, 80px);
   background: url("assets/base-emblem.png") center/contain no-repeat;
-  opacity: 0.85;
+  opacity: 0.9;
   filter: drop-shadow(0 0 10px #ff1a1aaa);
   pointer-events: none;
+  z-index: 2;
 }
-html[data-theme="study"] .graf-line {
-  font-family: Georgia, "Times New Roman", serif;
-  font-style: italic;
-  letter-spacing: 0.12em;
-  -webkit-text-stroke: 1.5px #1a0830;
-  filter: drop-shadow(0 0 12px #7b5cff88);
-}
+
 
 .emblem {
   display: none;
@@ -1054,6 +1003,6 @@ footer.site-footer {
   .brand-title { font-size: 1.05rem; }
   .stream-shell { padding: 10px; }
   .stream-shell--chat .chat-wrap { inset: 10px; }
-  .graf-line { font-size: clamp(1.8rem, 11vw, 3rem); }
-  html[data-theme="base"] .graffiti-title::before { width: 64px; height: 36px; }
+  .graf-svg { max-height: clamp(110px, 34vw, 200px); }
+  html[data-theme="base"] .graffiti-title::before { width: 56px; height: 32px; }
 }
