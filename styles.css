@@ -1,4 +1,4 @@
-/* Frankie Palmeri — theme system (sleek + per-mix frames) */
+/* Frankie Palmeri — ASCII / BASE / STUDY */
 :root {
   --bg: #07070a;
   --panel: #121218;
@@ -16,6 +16,9 @@
   --pad: 14px;
   --gap: 12px;
   --frame-pad: 14px;
+  --graf-1: #39ff14;
+  --graf-2: #00ff88;
+  --graf-outline: #003311;
 }
 
 * { box-sizing: border-box; }
@@ -34,8 +37,8 @@ body {
 a { color: inherit; }
 img { max-width: 100%; display: block; }
 
-/* ===== MIX 1: Matrix / cyber ASCII ===== */
-html[data-theme="mix1"] {
+/* ===== ASCII (was Mix 1): Matrix / cyber ===== */
+html[data-theme="ascii"] {
   --bg: #010603;
   --panel: #031108;
   --text: #9dff9d;
@@ -47,33 +50,36 @@ html[data-theme="mix1"] {
   --radius: 2px;
   --scan: 1;
   --glow: 0 0 18px color-mix(in srgb, #39ff14 45%, transparent);
+  --graf-1: #39ff14;
+  --graf-2: #b8ff6a;
+  --graf-outline: #002208;
 }
-html[data-theme="mix1"] body {
+html[data-theme="ascii"] body {
   background:
     radial-gradient(800px 420px at 15% -5%, #062414 0%, transparent 55%),
     radial-gradient(600px 360px at 95% 8%, #1a0020 0%, transparent 50%),
     #010603;
   text-shadow: 0 0 5px color-mix(in srgb, var(--accent) 35%, transparent);
 }
-html[data-theme="mix1"] .brand-title::before {
+html[data-theme="ascii"] .brand-title::before {
   content: ">_ ";
   color: var(--accent2);
 }
-html[data-theme="mix1"] .ascii-banner,
-html[data-theme="mix1"] .ascii-rule,
-html[data-theme="mix1"] .term-label,
-html[data-theme="mix1"] .matrix-rain,
-html[data-theme="mix1"] .frame-ascii { display: block; }
-html[data-theme="mix1"] .frame-mix1 { display: block; }
-html[data-theme="mix1"] .scanlines { opacity: 0.28; }
-html[data-theme="mix1"] section.panel {
+html[data-theme="ascii"] .ascii-banner,
+html[data-theme="ascii"] .ascii-rule,
+html[data-theme="ascii"] .term-label,
+html[data-theme="ascii"] .matrix-rain,
+html[data-theme="ascii"] .frame-ascii-chrome { display: block; }
+html[data-theme="ascii"] .frame-svg.frame-ascii { display: block; }
+html[data-theme="ascii"] .scanlines { opacity: 0.28; }
+html[data-theme="ascii"] section.panel {
   border-style: solid;
   border-width: 1px;
   box-shadow:
     inset 0 0 0 1px color-mix(in srgb, var(--accent) 12%, transparent),
     var(--glow);
 }
-html[data-theme="mix1"] section.panel::before {
+html[data-theme="ascii"] section.panel::before {
   content: "┌─ SYS ─────────────────────────────┐";
   display: block;
   font-family: var(--mono);
@@ -85,19 +91,20 @@ html[data-theme="mix1"] section.panel::before {
   white-space: nowrap;
   overflow: hidden;
 }
-html[data-theme="mix1"] .panel-mark::before { content: "▶ "; color: var(--accent); }
-html[data-theme="mix1"] .card {
+html[data-theme="ascii"] .panel-mark::before { content: "▶ "; color: var(--accent); }
+html[data-theme="ascii"] .card {
   border-color: color-mix(in srgb, var(--border) 80%, var(--accent));
   background: linear-gradient(180deg, #041a0c 0%, #020a05 100%);
 }
-html[data-theme="mix1"] .card .meta .name { font-family: var(--mono); letter-spacing: 0.04em; }
-html[data-theme="mix1"] .theme-switch { border-radius: 2px; }
-html[data-theme="mix1"] .theme-switch button { font-family: var(--mono); }
-html[data-theme="mix1"] .donate a,
-html[data-theme="mix1"] .stream-links a { border-radius: 2px; font-family: var(--mono); }
+html[data-theme="ascii"] .card .meta .name { font-family: var(--mono); letter-spacing: 0.04em; }
+html[data-theme="ascii"] .theme-switch { border-radius: 2px; }
+html[data-theme="ascii"] .theme-switch button { font-family: var(--mono); }
+html[data-theme="ascii"] .donate a,
+html[data-theme="ascii"] .stream-links a { border-radius: 2px; font-family: var(--mono); }
+html[data-theme="ascii"] .graffiti-title { display: flex; }
 
-/* ===== MIX 2: Shadaloo / propaganda ===== */
-html[data-theme="mix2"] {
+/* ===== BASE (was Mix 2): Shadaloo + skull emblem ===== */
+html[data-theme="base"] {
   --bg: #050000;
   --panel: #100303;
   --text: #f5e8e8;
@@ -108,39 +115,70 @@ html[data-theme="mix2"] {
   --font: "Segoe UI", Helvetica, Arial, sans-serif;
   --radius: 0;
   --glow: 0 0 16px color-mix(in srgb, #ff1a1a 35%, transparent);
+  --graf-1: #ff1a1a;
+  --graf-2: #ff6a00;
+  --graf-outline: #2a0000;
 }
-html[data-theme="mix2"] .brand-title,
-html[data-theme="mix2"] section.panel h2,
-html[data-theme="mix2"] .propaganda,
-html[data-theme="mix2"] .card .meta .name,
-html[data-theme="mix2"] .panel-meta {
+html[data-theme="base"] .brand-title,
+html[data-theme="base"] section.panel h2,
+html[data-theme="base"] .propaganda,
+html[data-theme="base"] .card .meta .name,
+html[data-theme="base"] .panel-meta,
+html[data-theme="base"] .war-headline {
   font-family: Impact, Haettenschweiler, "Arial Narrow Bold", "Arial Black", sans-serif;
 }
-html[data-theme="mix2"] body {
-  background: linear-gradient(145deg, #1a0000 0%, #050000 42%, #1c0000 100%);
+html[data-theme="base"] body {
+  background:
+    radial-gradient(ellipse 70% 40% at 50% 0%, #3a0000 0%, transparent 55%),
+    linear-gradient(145deg, #1a0000 0%, #050000 42%, #1c0000 100%);
   letter-spacing: 0.02em;
 }
-html[data-theme="mix2"] .emblem { display: block; }
-html[data-theme="mix2"] .propaganda { display: block; }
-html[data-theme="mix2"] .frame-mix2,
-html[data-theme="mix2"] .frame-prop { display: block; }
-html[data-theme="mix2"] section.panel,
-html[data-theme="mix2"] .card {
+html[data-theme="base"] .emblem-base { display: block; }
+html[data-theme="base"] .propaganda { display: block; }
+html[data-theme="base"] .frame-svg.frame-base,
+html[data-theme="base"] .frame-prop,
+html[data-theme="base"] .frame-emblem-badge,
+html[data-theme="base"] .base-watermarks,
+html[data-theme="base"] .card-emblem { display: block; }
+html[data-theme="base"] section.panel,
+html[data-theme="base"] .card {
   clip-path: polygon(0 0, calc(100% - 14px) 0, 100% 14px, 100% 100%, 14px 100%, 0 calc(100% - 14px));
   border-width: 2px;
 }
-html[data-theme="mix2"] .brand-title {
+html[data-theme="base"] .brand-title {
   text-transform: uppercase;
   font-size: 1.4rem;
   letter-spacing: 0.14em;
 }
-html[data-theme="mix2"] .panel-mark::before { content: "◆ "; color: var(--accent); }
-html[data-theme="mix2"] .theme-switch { border-radius: 0; }
-html[data-theme="mix2"] .donate a,
-html[data-theme="mix2"] .stream-links a { border-radius: 0; }
+html[data-theme="base"] .panel-mark::before { content: "◆ "; color: var(--accent); }
+html[data-theme="base"] .theme-switch { border-radius: 0; }
+html[data-theme="base"] .donate a,
+html[data-theme="base"] .stream-links a { border-radius: 0; }
+html[data-theme="base"] .graffiti-title { display: flex; }
+html[data-theme="base"] section.panel {
+  background:
+    linear-gradient(180deg, color-mix(in srgb, var(--panel) 92%, #400000) 0%, var(--panel) 100%);
+  border-color: var(--accent);
+  position: relative;
+}
+html[data-theme="base"] section.panel::after {
+  content: "";
+  position: absolute;
+  top: 8px;
+  right: 12px;
+  width: 56px;
+  height: 32px;
+  background: url("assets/base-emblem.png") center/contain no-repeat;
+  opacity: 0.35;
+  pointer-events: none;
+  filter: drop-shadow(0 0 4px #ff1a1a88);
+}
+html[data-theme="base"] .brand {
+  gap: 12px;
+}
 
-/* ===== MIX 3: Esoteric / tripped ===== */
-html[data-theme="mix3"] {
+/* ===== STUDY (was Mix 3): denser occult ===== */
+html[data-theme="study"] {
   --bg: #06020f;
   --panel: #11071c;
   --text: #f8e7ff;
@@ -151,30 +189,46 @@ html[data-theme="mix3"] {
   --font: Georgia, "Times New Roman", serif;
   --radius: 18px;
   --glow: 0 0 22px color-mix(in srgb, #7b5cff 30%, transparent);
+  --graf-1: #d4a017;
+  --graf-2: #c9a0ff;
+  --graf-outline: #1a0830;
 }
-html[data-theme="mix3"] body {
+html[data-theme="study"] body {
   background:
     radial-gradient(circle at 12% 18%, #2a1040 0%, transparent 38%),
     radial-gradient(circle at 88% 78%, #401020 0%, transparent 32%),
     radial-gradient(circle at 50% 50%, #0d0520, #020008);
 }
-html[data-theme="mix3"] .esoteric-layer { display: block; }
-html[data-theme="mix3"] .frame-mix3,
-html[data-theme="mix3"] .frame-eso { display: block; }
-html[data-theme="mix3"] .brand-title {
+html[data-theme="study"] .esoteric-layer { display: block; }
+html[data-theme="study"] .frame-svg.frame-study,
+html[data-theme="study"] .frame-eso,
+html[data-theme="study"] .occult-label { display: block; }
+html[data-theme="study"] .brand-title {
   font-style: italic;
   letter-spacing: 0.16em;
 }
-html[data-theme="mix3"] section.panel {
+html[data-theme="study"] section.panel {
   backdrop-filter: blur(8px);
   background: color-mix(in srgb, var(--panel) 78%, transparent);
   border-color: color-mix(in srgb, var(--accent) 40%, var(--border));
+  position: relative;
 }
-html[data-theme="mix3"] .panel-mark::before { content: "✦ "; color: var(--accent); }
-html[data-theme="mix3"] .card {
+html[data-theme="study"] section.panel::before {
+  content: "☽ ─── SEALED TRANSMISSION ─── ☾";
+  display: block;
+  font-size: 0.58rem;
+  letter-spacing: 0.22em;
+  color: var(--accent);
+  opacity: 0.55;
+  text-align: center;
+  margin: -4px 0 10px;
+}
+html[data-theme="study"] .panel-mark::before { content: "✦ "; color: var(--accent); }
+html[data-theme="study"] .card {
   background: color-mix(in srgb, var(--panel) 65%, #000);
   border-color: color-mix(in srgb, var(--accent2) 35%, var(--border));
 }
+html[data-theme="study"] .graffiti-title { display: flex; }
 
 /* overlays */
 .scanlines {
@@ -203,11 +257,30 @@ html[data-theme="mix3"] .card {
   opacity: 0.55;
 }
 
+/* BASE watermarks — recurring skull+wings motif */
+.base-watermarks {
+  display: none;
+  pointer-events: none;
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+}
+.bw-mark {
+  position: absolute;
+  opacity: 0.07;
+  filter: drop-shadow(0 0 12px #ff1a1a55);
+  object-fit: contain;
+}
+.bw-1 { width: min(520px, 70vw); top: 8%; left: -4%; transform: rotate(-8deg); }
+.bw-2 { width: min(380px, 50vw); bottom: 12%; right: -2%; transform: rotate(12deg); opacity: 0.09; }
+.bw-3 { width: min(280px, 40vw); top: 42%; left: 38%; transform: rotate(-3deg); opacity: 0.05; }
+
 .ascii-banner {
   display: none;
   white-space: pre;
   font-family: var(--mono);
-  font-size: clamp(0.4rem, 1.35vw, 0.68rem);
+  font-size: clamp(0.28rem, 0.95vw, 0.55rem);
   line-height: 1.05;
   color: var(--accent);
   margin: 0 0 4px;
@@ -224,22 +297,129 @@ html[data-theme="mix3"] .card {
   overflow: hidden;
   white-space: nowrap;
 }
-.term-label {
+.term-label,
+.occult-label {
   display: none;
   margin: 0 0 2px;
-  font-family: var(--mono);
   font-size: 0.65rem;
-  color: var(--accent2);
   letter-spacing: 0.08em;
   opacity: 0.8;
+}
+.term-label {
+  font-family: var(--mono);
+  color: var(--accent2);
+}
+.occult-label {
+  font-family: Georgia, serif;
+  color: var(--accent);
+  letter-spacing: 0.2em;
+}
+
+/* ===== GRAFFITI TITLE — FRANKIE PALMERI ===== */
+.graffiti-title {
+  display: none;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0;
+  margin: 6px 0 12px;
+  line-height: 0.88;
+  user-select: none;
+  position: relative;
+}
+.graf-line {
+  display: block;
+  font-family: Impact, Haettenschweiler, "Arial Black", "Arial Narrow Bold", sans-serif;
+  font-size: clamp(2.4rem, 9vw, 5.2rem);
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  color: var(--graf-1);
+  -webkit-text-stroke: 2px var(--graf-outline);
+  paint-order: stroke fill;
+  text-shadow:
+    3px 3px 0 var(--graf-outline),
+    6px 6px 0 color-mix(in srgb, var(--graf-2) 55%, transparent),
+    0 0 18px color-mix(in srgb, var(--graf-1) 55%, transparent),
+    0 0 40px color-mix(in srgb, var(--graf-2) 35%, transparent);
+  transform: skewX(-8deg) rotate(-1.5deg);
+  position: relative;
+}
+.graf-palmeri {
+  margin-left: clamp(0.4rem, 3vw, 1.8rem);
+  color: var(--graf-2);
+  transform: skewX(-6deg) rotate(1.2deg);
+  text-shadow:
+    3px 3px 0 var(--graf-outline),
+    6px 6px 0 color-mix(in srgb, var(--graf-1) 45%, transparent),
+    0 0 18px color-mix(in srgb, var(--graf-2) 55%, transparent),
+    0 0 40px color-mix(in srgb, var(--graf-1) 30%, transparent);
+}
+/* drip / tag accents via pseudo */
+.graf-frankie::after,
+.graf-palmeri::after {
+  content: "";
+  position: absolute;
+  left: 18%;
+  bottom: -10px;
+  width: 3px;
+  height: 14px;
+  background: var(--graf-1);
+  border-radius: 0 0 2px 2px;
+  box-shadow:
+    28px 4px 0 -1px var(--graf-1),
+    52px 0 0 0 var(--graf-2),
+    80px 6px 0 -2px var(--graf-1);
+  opacity: 0.85;
+}
+.graf-palmeri::after {
+  left: 22%;
+  background: var(--graf-2);
+}
+
+html[data-theme="ascii"] .graf-line {
+  font-family: var(--mono);
+  letter-spacing: -0.04em;
+  -webkit-text-stroke: 1.5px #003311;
+  filter: drop-shadow(0 0 8px #39ff1488);
+}
+html[data-theme="base"] .graf-line {
+  letter-spacing: 0.06em;
+  filter: drop-shadow(0 0 10px #ff1a1a99);
+}
+html[data-theme="base"] .graffiti-title::before {
+  content: "";
+  position: absolute;
+  right: 2%;
+  top: 10%;
+  width: clamp(80px, 18vw, 160px);
+  height: clamp(46px, 10vw, 92px);
+  background: url("assets/base-emblem.png") center/contain no-repeat;
+  opacity: 0.85;
+  filter: drop-shadow(0 0 10px #ff1a1aaa);
+  pointer-events: none;
+}
+html[data-theme="study"] .graf-line {
+  font-family: Georgia, "Times New Roman", serif;
+  font-style: italic;
+  letter-spacing: 0.12em;
+  -webkit-text-stroke: 1.5px #1a0830;
+  filter: drop-shadow(0 0 12px #7b5cff88);
 }
 
 .emblem {
   display: none;
+  flex-shrink: 0;
+}
+.emblem-legacy {
   width: 48px;
   height: 48px;
-  flex-shrink: 0;
   filter: drop-shadow(0 0 8px #ff1a1a88);
+}
+.emblem-base {
+  width: 72px;
+  height: 42px;
+  object-fit: contain;
+  filter: drop-shadow(0 0 10px #ff1a1acc);
 }
 .propaganda {
   display: none;
@@ -267,11 +447,46 @@ html[data-theme="mix3"] .card {
   opacity: 0.55;
   text-shadow: 0 0 12px #7b5cff88;
 }
+.eso-seal {
+  position: absolute;
+  width: clamp(120px, 22vw, 260px);
+  height: clamp(120px, 22vw, 260px);
+  background: url("assets/occult-seal.svg") center/contain no-repeat;
+  opacity: 0.14;
+  animation: spinSeal 48s linear infinite;
+  filter: drop-shadow(0 0 16px #7b5cff66);
+}
+.eso-eye {
+  position: absolute;
+  width: 36px;
+  height: 22px;
+  border: 1.5px solid var(--accent);
+  border-radius: 50%;
+  box-shadow: 0 0 12px #7b5cff88;
+  opacity: 0.45;
+  animation: pulseEye 4s ease-in-out infinite;
+}
+.eso-eye::after {
+  content: "";
+  position: absolute;
+  inset: 5px 11px;
+  background: var(--accent2);
+  border-radius: 50%;
+  box-shadow: 0 0 6px #d4a017;
+}
 @keyframes drift {
   0% { transform: translate3d(0,0,0) rotate(var(--rot)) scale(1); opacity: 0; }
   10% { opacity: 0.6; }
   90% { opacity: 0.45; }
   100% { transform: translate3d(var(--dx), var(--dy), 0) rotate(calc(var(--rot) + 25deg)) scale(1.05); opacity: 0; }
+}
+@keyframes spinSeal {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+@keyframes pulseEye {
+  0%, 100% { opacity: 0.3; transform: scale(1); }
+  50% { opacity: 0.7; transform: scale(1.08); }
 }
 
 /* layout */
@@ -402,9 +617,7 @@ section.panel h2 {
 }
 @media (max-width: 900px) {
   .stream-layout { grid-template-columns: 1fr; }
-  .stream-shell--chat {
-    min-height: 420px;
-  }
+  .stream-shell--chat { min-height: 420px; }
   .stream-shell--chat .chat-wrap {
     position: absolute;
     inset: var(--frame-pad);
@@ -424,6 +637,8 @@ section.panel h2 {
   display: flex;
   flex-direction: column;
   min-height: 100%;
+  position: relative;
+  min-height: 0;
 }
 
 .frame-overlay {
@@ -442,8 +657,22 @@ section.panel h2 {
   opacity: 0.95;
 }
 
-/* Mix 1 ASCII chrome on frames */
-.frame-ascii {
+/* BASE emblem badges on stream frames */
+.frame-emblem-badge {
+  display: none;
+  position: absolute;
+  width: 64px;
+  height: 36px;
+  object-fit: contain;
+  opacity: 0.9;
+  filter: drop-shadow(0 0 6px #ff1a1aaa);
+  z-index: 4;
+}
+.feb-tl { top: 6px; left: 8px; }
+.feb-tr { top: 6px; right: 8px; transform: scaleX(-1); }
+
+/* ASCII chrome on frames */
+.frame-ascii-chrome {
   display: none;
   position: absolute;
   inset: 0;
@@ -454,11 +683,11 @@ section.panel h2 {
   line-height: 1;
   font-weight: 700;
 }
-.frame-ascii .fa-tl { position: absolute; top: 2px; left: 4px; }
-.frame-ascii .fa-tr { position: absolute; top: 2px; right: 4px; }
-.frame-ascii .fa-bl { position: absolute; bottom: 2px; left: 4px; }
-.frame-ascii .fa-br { position: absolute; bottom: 2px; right: 4px; }
-.frame-ascii .fa-tag {
+.frame-ascii-chrome .fa-tl { position: absolute; top: 2px; left: 4px; }
+.frame-ascii-chrome .fa-tr { position: absolute; top: 2px; right: 4px; }
+.frame-ascii-chrome .fa-bl { position: absolute; bottom: 2px; left: 4px; }
+.frame-ascii-chrome .fa-br { position: absolute; bottom: 2px; right: 4px; }
+.frame-ascii-chrome .fa-tag {
   position: absolute;
   top: 2px;
   left: 50%;
@@ -471,7 +700,7 @@ section.panel h2 {
   padding: 0 6px;
 }
 
-/* Mix 2 propaganda chrome */
+/* BASE propaganda chrome */
 .frame-prop {
   display: none;
   position: absolute;
@@ -484,7 +713,7 @@ section.panel h2 {
   border: 2px solid var(--accent);
   box-shadow: 0 0 8px color-mix(in srgb, var(--accent) 50%, transparent);
 }
-.fp-tl { top: 4px; left: 4px; border-right: 0; border-bottom: 0; clip-path: polygon(0 0, 100% 0, 0 100%); background: linear-gradient(135deg, var(--accent) 0%, transparent 55%); }
+.fp-tl { top: 4px; left: 4px; border-right: 0; border-bottom: 0; background: linear-gradient(135deg, var(--accent) 0%, transparent 55%); }
 .fp-tr { top: 4px; right: 4px; border-left: 0; border-bottom: 0; background: linear-gradient(225deg, var(--accent) 0%, transparent 55%); }
 .fp-bl { bottom: 4px; left: 4px; border-right: 0; border-top: 0; background: linear-gradient(45deg, var(--accent) 0%, transparent 55%); }
 .fp-br { bottom: 4px; right: 4px; border-left: 0; border-top: 0; background: linear-gradient(315deg, var(--accent) 0%, transparent 55%); }
@@ -503,7 +732,7 @@ section.panel h2 {
   text-transform: uppercase;
 }
 
-/* Mix 3 esoteric chrome */
+/* STUDY esoteric chrome */
 .frame-eso {
   display: none;
   position: absolute;
@@ -511,11 +740,19 @@ section.panel h2 {
 }
 .fe-ring {
   position: absolute;
-  width: 20px;
-  height: 20px;
+  width: 22px;
+  height: 22px;
   border: 1.5px solid var(--accent);
   border-radius: 50%;
   box-shadow: 0 0 10px color-mix(in srgb, var(--accent2) 50%, transparent);
+}
+.fe-ring::before {
+  content: "";
+  position: absolute;
+  inset: -4px;
+  border: 1px solid color-mix(in srgb, var(--accent2) 50%, transparent);
+  border-radius: 50%;
+  opacity: 0.6;
 }
 .fe-ring::after {
   content: "";
@@ -570,17 +807,10 @@ section.panel h2 {
   height: auto;
   min-height: 0;
 }
-.stream-shell--chat {
-  position: relative;
-  min-height: 0;
-}
 @media (min-width: 901px) {
   .stream-shell--chat { min-height: 100%; }
   .stream-shell--chat .chat-wrap { position: absolute; }
-  .stream-layout > .stream-shell:first-child { /* player defines height */ }
-  .stream-shell--chat .player-wrap { /* n/a */ }
 }
-/* Make chat shell stretch to player height via grid */
 .stream-shell--chat .chat-wrap {
   position: absolute;
   inset: var(--frame-pad);
@@ -595,29 +825,42 @@ section.panel h2 {
   border: 0;
 }
 
-html[data-theme="mix1"] .stream-shell {
-  background:
-    linear-gradient(180deg, #031a0c 0%, #010804 100%);
+html[data-theme="ascii"] .stream-shell {
+  background: linear-gradient(180deg, #031a0c 0%, #010804 100%);
   border-color: var(--accent);
   box-shadow:
     inset 0 0 24px color-mix(in srgb, var(--accent) 12%, transparent),
     0 0 20px color-mix(in srgb, var(--accent) 18%, transparent);
 }
-html[data-theme="mix1"] .player-wrap,
-html[data-theme="mix1"] .chat-wrap {
+html[data-theme="ascii"] .player-wrap,
+html[data-theme="ascii"] .chat-wrap {
   border-color: #1a5c2a;
   box-shadow: inset 0 0 30px rgba(0, 40, 10, 0.45);
 }
-html[data-theme="mix2"] .stream-shell {
+html[data-theme="base"] .stream-shell {
   clip-path: polygon(0 0, calc(100% - 16px) 0, 100% 16px, 100% 100%, 16px 100%, 0 calc(100% - 16px));
   border-width: 2px;
   border-color: var(--accent);
-  background: linear-gradient(160deg, #1a0505, #080000);
+  background:
+    url("assets/base-emblem.png") right 8px top 28px / 72px auto no-repeat,
+    linear-gradient(160deg, #1a0505, #080000);
+  background-blend-mode: soft-light, normal;
 }
-html[data-theme="mix3"] .stream-shell {
+html[data-theme="base"] .stream-shell::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url("assets/base-emblem.png") center / 55% auto no-repeat;
+  opacity: 0.06;
+  pointer-events: none;
+  z-index: 0;
+}
+html[data-theme="study"] .stream-shell {
   border-radius: 22px;
   border-color: color-mix(in srgb, var(--accent) 50%, var(--border));
-  background: linear-gradient(160deg, #1a0a2a, #080412);
+  background:
+    url("assets/occult-seal.svg") center / 48% auto no-repeat,
+    linear-gradient(160deg, #1a0a2a, #080412);
   box-shadow: 0 0 24px color-mix(in srgb, var(--accent2) 22%, transparent);
 }
 
@@ -665,10 +908,33 @@ html[data-theme="mix3"] .stream-shell {
   background: #0c0c10 center/cover no-repeat;
   position: relative;
 }
-.card .thumb img {
+.card .thumb img:not(.card-emblem) {
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+.card-emblem {
+  display: none;
+  position: absolute;
+  bottom: 6px;
+  right: 6px;
+  width: 48px;
+  height: 28px;
+  object-fit: contain;
+  opacity: 0.75;
+  filter: drop-shadow(0 0 4px #000) drop-shadow(0 0 6px #ff1a1a88);
+  pointer-events: none;
+  z-index: 2;
+}
+.card-emblem--big {
+  width: 70%;
+  height: 45%;
+  bottom: auto;
+  right: auto;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0.35;
 }
 .card .meta {
   padding: 10px;
@@ -701,6 +967,39 @@ html[data-theme="mix3"] .stream-shell {
   background: linear-gradient(135deg, #1a1a22, #08080c);
   font-size: 1.6rem;
   color: var(--accent);
+  position: relative;
+}
+.shop-arrow { position: relative; z-index: 1; }
+html[data-theme="base"] .card.shop-all .thumb {
+  background: linear-gradient(135deg, #2a0505, #080000);
+}
+
+/* war effort / donation */
+.war-effort {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 16px;
+}
+.war-art {
+  flex: 0 0 auto;
+  width: min(280px, 100%);
+  filter: drop-shadow(0 0 12px color-mix(in srgb, var(--accent) 35%, transparent));
+}
+.war-art img { width: 100%; height: auto; }
+.war-copy { flex: 1 1 200px; }
+.war-headline {
+  margin: 0 0 4px;
+  font-size: clamp(1.1rem, 3vw, 1.55rem);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent);
+  text-shadow: 0 0 14px color-mix(in srgb, var(--accent) 40%, transparent);
+}
+.war-sub {
+  margin: 0 0 12px;
+  color: var(--muted);
+  font-size: 0.88rem;
 }
 
 .donate {
@@ -755,4 +1054,6 @@ footer.site-footer {
   .brand-title { font-size: 1.05rem; }
   .stream-shell { padding: 10px; }
   .stream-shell--chat .chat-wrap { inset: 10px; }
+  .graf-line { font-size: clamp(1.8rem, 11vw, 3rem); }
+  html[data-theme="base"] .graffiti-title::before { width: 64px; height: 36px; }
 }

@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 200" role="img" aria-label="Hands held out with floating dollars">
+  <defs>
+    <linearGradient id="skin" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#f0d0a8"/>
+      <stop offset="100%" stop-color="#c4925a"/>
+    </linearGradient>
+    <linearGradient id="dollar" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#7CFF6B"/>
+      <stop offset="100%" stop-color="#2ecc40"/>
+    </linearGradient>
+    <filter id="glow"><feGaussianBlur stdDeviation="1.2" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+  </defs>
+  <!-- floating dollars -->
+  <g filter="url(#glow)" fill="url(#dollar)" font-family="Impact, Arial Black, sans-serif" font-size="28" font-weight="700">
+    <text x="95" y="38" transform="rotate(-12 95 38)">$</text>
+    <text x="148" y="22" transform="rotate(6 148 22)" font-size="34">$</text>
+    <text x="205" y="40" transform="rotate(14 205 40)">$</text>
+    <text x="120" y="58" transform="rotate(-4 120 58)" font-size="18" opacity="0.85">$</text>
+    <text x="180" y="56" transform="rotate(8 180 56)" font-size="20" opacity="0.85">$</text>
+  </g>
+  <!-- left hand (palm up, fingers toward viewer) -->
+  <g fill="url(#skin)" stroke="#5a3a1a" stroke-width="2" stroke-linejoin="round">
+    <ellipse cx="118" cy="148" rx="48" ry="28"/>
+    <path d="M78 140 C70 110, 78 95, 88 98 C96 100, 98 118, 100 138 Z"/>
+    <path d="M98 132 C95 100, 105 85, 114 88 C122 91, 122 112, 120 136 Z"/>
+    <path d="M118 130 C118 98, 128 82, 136 86 C144 90, 142 112, 138 134 Z"/>
+    <path d="M136 132 C140 102, 152 88, 160 92 C168 96, 162 118, 154 138 Z"/>
+    <path d="M152 140 C162 118, 176 112, 182 120 C188 128, 172 148, 160 152 Z"/>
+  </g>
+  <!-- right hand -->
+  <g fill="url(#skin)" stroke="#5a3a1a" stroke-width="2" stroke-linejoin="round">
+    <ellipse cx="202" cy="148" rx="48" ry="28"/>
+    <path d="M242 140 C250 110, 242 95, 232 98 C224 100, 222 118, 220 138 Z"/>
+    <path d="M222 132 C225 100, 215 85, 206 88 C198 91, 198 112, 200 136 Z"/>
+    <path d="M202 130 C202 98, 192 82, 184 86 C176 90, 178 112, 182 134 Z"/>
+    <path d="M184 132 C180 102, 168 88, 160 92 C152 96, 158 118, 166 138 Z"/>
+    <path d="M168 140 C158 118, 144 112, 138 120 C132 128, 148 148, 160 152 Z"/>
+  </g>
+  <!-- palm lines subtle -->
+  <path d="M100 150 Q118 158 136 150" fill="none" stroke="#a07040" stroke-width="1.2" opacity="0.6"/>
+  <path d="M184 150 Q202 158 220 150" fill="none" stroke="#a07040" stroke-width="1.2" opacity="0.6"/>
+</svg>

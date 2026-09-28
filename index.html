@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="mix1" data-build="20260928b">
+<html lang="en" data-theme="ascii" data-build="20260928c">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -7,21 +7,28 @@
   <meta name="description" content="Frankie Palmeri — live stream, merch, Amazon picks, and support." />
   <meta name="theme-color" content="#020803" />
   <link rel="icon" href="merch/frankie-anime-head.png" type="image/png" />
-  <link rel="stylesheet" href="styles.css?v=20260928b" />
+  <link rel="stylesheet" href="styles.css?v=20260928c" />
 </head>
 <body>
   <div class="scanlines" aria-hidden="true"></div>
   <canvas class="matrix-rain" id="matrix-rain" aria-hidden="true"></canvas>
   <div class="esoteric-layer" id="esoteric" aria-hidden="true"></div>
+  <div class="base-watermarks" aria-hidden="true">
+    <img class="bw-mark bw-1" src="assets/base-emblem.png" alt="" />
+    <img class="bw-mark bw-2" src="assets/base-emblem.png" alt="" />
+    <img class="bw-mark bw-3" src="assets/base-emblem.png" alt="" />
+  </div>
 
   <div class="wrap">
     <header class="site-header">
       <div class="brand">
         <img class="brand-mark" src="merch/frankie-anime-head.png" alt="Frankie Head" width="44" height="44" />
-        <img class="emblem" src="assets/emblem.svg" alt="" width="48" height="48" />
+        <img class="emblem emblem-legacy" src="assets/emblem.svg" alt="" width="48" height="48" />
+        <img class="emblem emblem-base" src="assets/base-emblem.png" alt="" width="72" height="42" />
         <div>
           <p class="propaganda">ORDER · STRENGTH · SIGNAL</p>
           <p class="term-label" aria-hidden="true">root@signal:~#</p>
+          <p class="occult-label" aria-hidden="true">∴ VEIL PROTOCOL ∴</p>
           <h1 class="brand-title">Frankie Palmeri</h1>
           <p class="brand-sub">live · merch · picks · support</p>
         </div>
@@ -30,23 +37,29 @@
         <a href="#live">Live</a>
         <a href="#merch">Merch</a>
         <a href="#amazon">Amazon</a>
-        <a href="#support">Donate</a>
+        <a href="#support">Support</a>
         <a href="https://frankie-head-shop.printify.me" target="_blank" rel="noopener">Shop</a>
-        <div class="theme-switch" role="group" aria-label="Theme mix">
-          <button type="button" data-theme="mix1" aria-pressed="true">Mix 1</button>
-          <button type="button" data-theme="mix2" aria-pressed="false">Mix 2</button>
-          <button type="button" data-theme="mix3" aria-pressed="false">Mix 3</button>
+        <div class="theme-switch" role="group" aria-label="Theme">
+          <button type="button" data-theme="ascii" aria-pressed="true">ASCII</button>
+          <button type="button" data-theme="base" aria-pressed="false">BASE</button>
+          <button type="button" data-theme="study" aria-pressed="false">STUDY</button>
         </div>
       </nav>
     </header>
 
+    <!-- Big graffiti title: FRANKIE PALMERI — themed per mix -->
+    <div class="graffiti-title" aria-hidden="true">
+      <span class="graf-line graf-frankie">FRANKIE</span>
+      <span class="graf-line graf-palmeri">PALMERI</span>
+    </div>
+
     <pre class="ascii-banner" aria-hidden="true">
-███████╗██████╗  █████╗ ███╗   ██╗██╗  ██╗██╗███████╗
-██╔════╝██╔══██╗██╔══██╗████╗  ██║██║ ██╔╝██║██╔════╝
-█████╗  ██████╔╝███████║██╔██╗ ██║█████╔╝ ██║█████╗
-██╔══╝  ██╔══██╗██╔══██║██║╚██╗██║██╔═██╗ ██║██╔══╝
-██║     ██║  ██║██║  ██║██║ ╚████║██║  ██╗██║███████╗
-╚═╝     ╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═══╝╚═╝  ╚═╝╚═╝╚══════╝
+███████╗██████╗  █████╗ ███╗   ██╗██╗  ██╗██╗███████╗    ██████╗  █████╗ ██╗     ███╗   ███╗███████╗██████╗ ██╗
+██╔════╝██╔══██╗██╔══██╗████╗  ██║██║ ██╔╝██║██╔════╝    ██╔══██╗██╔══██╗██║     ████╗ ████║██╔════╝██╔══██╗██║
+█████╗  ██████╔╝███████║██╔██╗ ██║█████╔╝ ██║█████╗      ██████╔╝███████║██║     ██╔████╔██║█████╗  ██████╔╝██║
+██╔══╝  ██╔══██╗██╔══██║██║╚██╗██║██╔═██╗ ██║██╔══╝      ██╔═══╝ ██╔══██║██║     ██║╚██╔╝██║██╔══╝  ██╔══██╗██║
+██║     ██║  ██║██║  ██║██║ ╚████║██║  ██╗██║███████╗    ██║     ██║  ██║███████╗██║ ╚═╝ ██║███████╗██║  ██║██║
+╚═╝     ╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═══╝╚═╝  ╚═╝╚═╝╚══════╝    ╚═╝     ╚═╝  ╚═╝╚══════╝╚═╝     ╚═╝╚══════╝╚═╝  ╚═╝╚═╝
     </pre>
     <pre class="ascii-rule" aria-hidden="true">════════════════════════════════════════════════════════════════</pre>
 
@@ -59,10 +72,12 @@
         <div class="stream-layout">
           <div class="stream-shell">
             <div class="frame-overlay" aria-hidden="true">
-              <img class="frame-svg frame-mix1" src="assets/frame-matrix.svg" alt="" />
-              <img class="frame-svg frame-mix2" src="assets/frame-shadaloo.svg" alt="" />
-              <img class="frame-svg frame-mix3" src="assets/frame-esoteric.svg" alt="" />
-              <div class="frame-ascii" aria-hidden="true">
+              <img class="frame-svg frame-ascii" src="assets/frame-matrix.svg" alt="" />
+              <img class="frame-svg frame-base" src="assets/frame-shadaloo.svg" alt="" />
+              <img class="frame-svg frame-study" src="assets/frame-esoteric.svg" alt="" />
+              <img class="frame-emblem-badge feb-tl" src="assets/base-emblem.png" alt="" />
+              <img class="frame-emblem-badge feb-tr" src="assets/base-emblem.png" alt="" />
+              <div class="frame-ascii-chrome">
                 <span class="fa-tl">╔══</span><span class="fa-tr">══╗</span>
                 <span class="fa-bl">╚══</span><span class="fa-br">══╝</span>
                 <span class="fa-tag">[ STREAM_FEED ]</span>
@@ -82,10 +97,12 @@
           </div>
           <div class="stream-shell stream-shell--chat">
             <div class="frame-overlay" aria-hidden="true">
-              <img class="frame-svg frame-mix1" src="assets/frame-matrix.svg" alt="" />
-              <img class="frame-svg frame-mix2" src="assets/frame-shadaloo.svg" alt="" />
-              <img class="frame-svg frame-mix3" src="assets/frame-esoteric.svg" alt="" />
-              <div class="frame-ascii" aria-hidden="true">
+              <img class="frame-svg frame-ascii" src="assets/frame-matrix.svg" alt="" />
+              <img class="frame-svg frame-base" src="assets/frame-shadaloo.svg" alt="" />
+              <img class="frame-svg frame-study" src="assets/frame-esoteric.svg" alt="" />
+              <img class="frame-emblem-badge feb-tl" src="assets/base-emblem.png" alt="" />
+              <img class="frame-emblem-badge feb-tr" src="assets/base-emblem.png" alt="" />
+              <div class="frame-ascii-chrome">
                 <span class="fa-tl">╔══</span><span class="fa-tr">══╗</span>
                 <span class="fa-bl">╚══</span><span class="fa-br">══╝</span>
                 <span class="fa-tag">[ CHAT_BUF ]</span>
@@ -116,7 +133,10 @@
         </div>
         <div class="grid">
           <a class="card" href="https://frankie-head-shop.printify.me/product/32472541" target="_blank" rel="noopener">
-            <div class="thumb"><img src="merch/tote-front.jpg" alt="Frankie Head Tote mockup" width="400" height="400" loading="lazy" /></div>
+            <div class="thumb">
+              <img src="merch/tote-front.jpg" alt="Frankie Head Tote mockup" width="400" height="400" loading="lazy" />
+              <img class="card-emblem" src="assets/base-emblem.png" alt="" aria-hidden="true" />
+            </div>
             <div class="meta">
               <span class="name">Frankie Head Tote</span>
               <span class="desc">24″ × 13″ weekender · all-over print</span>
@@ -124,7 +144,10 @@
             </div>
           </a>
           <a class="card" href="https://frankie-head-shop.printify.me/product/32472439" target="_blank" rel="noopener">
-            <div class="thumb"><img src="merch/sticker-front.jpg" alt="Frankie Head Sticker mockup" width="400" height="400" loading="lazy" /></div>
+            <div class="thumb">
+              <img src="merch/sticker-front.jpg" alt="Frankie Head Sticker mockup" width="400" height="400" loading="lazy" />
+              <img class="card-emblem" src="assets/base-emblem.png" alt="" aria-hidden="true" />
+            </div>
             <div class="meta">
               <span class="name">Frankie Head Sticker</span>
               <span class="desc">Die-cut vinyl · 2″ × 2″</span>
@@ -132,7 +155,10 @@
             </div>
           </a>
           <a class="card" href="https://frankie-head-shop.printify.me/product/32472399" target="_blank" rel="noopener">
-            <div class="thumb"><img src="merch/phone-front.jpg" alt="Frankie Head Phone Case mockup" width="400" height="400" loading="lazy" /></div>
+            <div class="thumb">
+              <img src="merch/phone-front.jpg" alt="Frankie Head Phone Case mockup" width="400" height="400" loading="lazy" />
+              <img class="card-emblem" src="assets/base-emblem.png" alt="" aria-hidden="true" />
+            </div>
             <div class="meta">
               <span class="name">Frankie Head Phone Case</span>
               <span class="desc">Slim glossy · wireless charge OK</span>
@@ -140,7 +166,10 @@
             </div>
           </a>
           <a class="card shop-all" href="https://frankie-head-shop.printify.me" target="_blank" rel="noopener">
-            <div class="thumb" aria-hidden="true">→</div>
+            <div class="thumb" aria-hidden="true">
+              <span class="shop-arrow">→</span>
+              <img class="card-emblem card-emblem--big" src="assets/base-emblem.png" alt="" />
+            </div>
             <div class="meta">
               <span class="name">Shop all</span>
               <span class="desc">Printify Pop-Up storefront</span>
@@ -197,25 +226,34 @@
         <p class="note">As an Amazon Associate I earn from qualifying purchases.</p>
       </section>
 
-      <section class="panel" id="support" aria-label="Support">
+      <section class="panel" id="support" aria-label="Support the war effort">
         <div class="panel-head">
-          <h2><span class="panel-mark" aria-hidden="true"></span>Support</h2>
+          <h2><span class="panel-mark" aria-hidden="true"></span>Support the war effort</h2>
           <span class="panel-meta" aria-hidden="true">PAYPAL · TWITCH</span>
         </div>
-        <div class="donate">
-          <a href="https://paypal.me/frankiepalmeri" target="_blank" rel="noopener">Donate via PayPal</a>
-          <a class="secondary" href="https://www.twitch.tv/frankiepalmeri" target="_blank" rel="noopener">Support on Twitch</a>
+        <div class="war-effort">
+          <div class="war-art" aria-hidden="true">
+            <img src="assets/war-hands.svg" alt="" width="280" height="175" />
+          </div>
+          <div class="war-copy">
+            <p class="war-headline">SUPPORT THE WAR EFFORT</p>
+            <p class="war-sub">Fuel the signal. Keep the stream armed.</p>
+            <div class="donate">
+              <a href="https://paypal.me/frankiepalmeri" target="_blank" rel="noopener">Support via PayPal</a>
+              <a class="secondary" href="https://www.twitch.tv/frankiepalmeri" target="_blank" rel="noopener">Support on Twitch</a>
+            </div>
+          </div>
         </div>
       </section>
     </main>
 
     <footer class="site-footer">
-      © <span id="y"></span> Frankie Palmeri · Mix themes save in your browser ·
+      © <span id="y"></span> Frankie Palmeri · Themes save in your browser ·
       As an Amazon Associate I earn from qualifying purchases.
     </footer>
   </div>
 
-  <script src="site.js?v=20260928b"></script>
-  <p id="build-stamp" style="position:fixed;bottom:6px;right:10px;z-index:9999;font:11px/1.2 ui-monospace,monospace;opacity:.55;margin:0;pointer-events:none">build 20260928b</p>
+  <script src="site.js?v=20260928c"></script>
+  <p id="build-stamp" style="position:fixed;bottom:6px;right:10px;z-index:9999;font:11px/1.2 ui-monospace,monospace;opacity:.55;margin:0;pointer-events:none">build 20260928c</p>
 </body>
 </html>

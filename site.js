@@ -1,7 +1,15 @@
 (function () {
   const TWITCH_USER = 'frankiepalmeri';
   const THEME_KEY = 'fp-theme-mix';
-  const THEMES = ['mix1', 'mix2', 'mix3'];
+  const THEMES = ['ascii', 'base', 'study'];
+  const THEME_MIGRATE = {
+    mix1: 'ascii',
+    mix2: 'base',
+    mix3: 'study',
+    ascii: 'ascii',
+    base: 'base',
+    study: 'study'
+  };
 
   function embedParents() {
     const hosts = new Set([
@@ -56,7 +64,7 @@
     if (link) link.href = 'https://www.twitch.tv/' + encodeURIComponent(user);
   }
 
-  /* ===== Dense Matrix rain (Mix 1) ===== */
+  /* ===== Dense Matrix rain (ASCII) ===== */
   const MATRIX_GLYPHS =
     'アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン' +
     'ｱｲｳｴｵｶｷｸｹｺｻｼｽｾｿﾀﾁﾂﾃﾄﾅﾆﾇﾈﾉﾊﾋﾌﾍﾎﾏﾐﾑﾒﾓﾔﾕﾖﾗﾘﾙﾚﾛﾜﾝ' +
@@ -103,7 +111,6 @@
 
   function tickRain() {
     if (!rainActive || !rainCtx) return;
-    // phosphor trail fade — denser feel
     rainCtx.fillStyle = 'rgba(1, 6, 3, 0.085)';
     rainCtx.fillRect(0, 0, rainW, rainH);
     rainCtx.font = rainFont + 'px ui-monospace, SFMono-Regular, Menlo, Consolas, monospace';
@@ -132,7 +139,7 @@
           rainCtx.fillStyle = 'rgba(57,255,20,0.85)';
           rainCtx.shadowBlur = 0;
         } else {
-          rainCtx.fillStyle = 'rgba(20,140,50,' + (0.55 - r / col.len * 0.4) + ')';
+          rainCtx.fillStyle = 'rgba(20,140,50,' + (0.55 - (r / col.len) * 0.4) + ')';
           rainCtx.shadowBlur = 0;
         }
         rainCtx.fillText(ch, x, y);
@@ -155,7 +162,6 @@
     if (!canvas) return;
     rainActive = true;
     resizeRain();
-    // seed opaque first paint so trails build denser
     if (rainCtx) {
       rainCtx.fillStyle = '#010603';
       rainCtx.fillRect(0, 0, rainW, rainH);
@@ -183,8 +189,13 @@
     });
   }
 
+  function normalizeTheme(raw) {
+    if (!raw) return 'ascii';
+    return THEME_MIGRATE[raw] || (THEMES.includes(raw) ? raw : 'ascii');
+  }
+
   function setTheme(theme) {
-    if (!THEMES.includes(theme)) theme = 'mix1';
+    theme = normalizeTheme(theme);
     document.documentElement.setAttribute('data-theme', theme);
     try {
       localStorage.setItem(THEME_KEY, theme);
@@ -197,17 +208,17 @@
     if (meta) {
       meta.setAttribute(
         'content',
-        theme === 'mix1' ? '#010603' : theme === 'mix2' ? '#050000' : '#06020f'
+        theme === 'ascii' ? '#010603' : theme === 'base' ? '#050000' : '#06020f'
       );
     }
 
-    if (theme === 'mix1') {
+    if (theme === 'ascii') {
       ensureRainResize();
       startRain();
     } else {
       stopRain();
     }
-    if (theme === 'mix3') spawnEsoteric();
+    if (theme === 'study') spawnEsoteric();
   }
 
   function initTheme() {
@@ -215,7 +226,7 @@
     try {
       saved = localStorage.getItem(THEME_KEY);
     } catch (_) {}
-    setTheme(THEMES.includes(saved) ? saved : 'mix1');
+    setTheme(normalizeTheme(saved));
     document.querySelectorAll('.theme-switch button').forEach((btn) => {
       btn.addEventListener('click', () => setTheme(btn.dataset.theme));
     });
@@ -239,7 +250,25 @@
     'LIGHT WITHOUT FORM',
     'FORM WITHOUT MERCY',
     'WHO WATCHES THE WATCHERS?',
-    'AMEN · AGAIN · AMEN'
+    'AMEN · AGAIN · AMEN',
+    'SOLVE ET COAGULA',
+    'IGNIS AURUM PROBAT',
+    'NOLI TIMERE TENEBRAE',
+    'THE SEAL IS BROKEN',
+    'OCULUS DEI / OCULUS MACHINE',
+    '777 · 333 · 111',
+    'QUINTESSENCE ONLINE',
+    'THE CIRCLE DOES NOT CLOSE',
+    'NAMASTE · NEMO · NIHIL',
+    'VOID SPEAKS IN HEX',
+    'SUB ROSA / SUB PIXEL',
+    'THE KEY IS THE LOCK',
+    'SIGIL LOADED',
+    'MERCURY ASCENDS',
+    'SULPHUR REMEMBERS',
+    'SALT ENDURES',
+    'ABRACADABRA → ABRA → A',
+    'IA IA THE STREAMING ONE'
   ];
 
   let esotericBuilt = false;
@@ -247,16 +276,18 @@
     const layer = document.getElementById('esoteric');
     if (!layer || esotericBuilt) return;
     esotericBuilt = true;
-    for (let i = 0; i < 18; i++) {
+
+    // denser floating cryptic text
+    for (let i = 0; i < 36; i++) {
       const el = document.createElement('span');
       el.className = 'float-text';
       el.textContent = CRYPTO[i % CRYPTO.length];
       const startX = Math.random() * 100;
       const startY = Math.random() * 100;
-      const dx = (Math.random() * 40 - 20) + 'vw';
-      const dy = (Math.random() * 50 - 25) + 'vh';
-      const rot = (Math.random() * 60 - 30) + 'deg';
-      const dur = 18 + Math.random() * 28;
+      const dx = Math.random() * 40 - 20 + 'vw';
+      const dy = Math.random() * 50 - 25 + 'vh';
+      const rot = Math.random() * 60 - 30 + 'deg';
+      const dur = 16 + Math.random() * 30;
       el.style.left = startX + 'vw';
       el.style.top = startY + 'vh';
       el.style.setProperty('--dx', dx);
@@ -264,8 +295,33 @@
       el.style.setProperty('--rot', rot);
       el.style.animationDuration = dur + 's';
       el.style.animationDelay = -Math.random() * dur + 's';
-      el.style.fontSize = 0.65 + Math.random() * 0.9 + 'rem';
+      el.style.fontSize = 0.55 + Math.random() * 1.05 + 'rem';
+      el.style.opacity = String(0.35 + Math.random() * 0.4);
+      if (i % 4 === 0) el.style.color = 'color-mix(in srgb, #d4a017 70%, transparent)';
       layer.appendChild(el);
+    }
+
+    // geometric magic-circle seals
+    for (let i = 0; i < 5; i++) {
+      const seal = document.createElement('div');
+      seal.className = 'eso-seal';
+      seal.style.left = 5 + Math.random() * 75 + 'vw';
+      seal.style.top = 5 + Math.random() * 70 + 'vh';
+      seal.style.animationDuration = 36 + Math.random() * 40 + 's';
+      seal.style.animationDirection = i % 2 ? 'reverse' : 'normal';
+      seal.style.opacity = String(0.1 + Math.random() * 0.12);
+      layer.appendChild(seal);
+    }
+
+    // floating eyes
+    for (let i = 0; i < 8; i++) {
+      const eye = document.createElement('div');
+      eye.className = 'eso-eye';
+      eye.style.left = Math.random() * 92 + 'vw';
+      eye.style.top = Math.random() * 88 + 'vh';
+      eye.style.animationDelay = -Math.random() * 4 + 's';
+      eye.style.transform = 'scale(' + (0.7 + Math.random() * 0.8) + ')';
+      layer.appendChild(eye);
     }
   }
 

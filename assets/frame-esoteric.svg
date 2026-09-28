@@ -6,28 +6,36 @@
       <stop offset="100%" stop-color="#d4a017"/>
     </linearGradient>
   </defs>
-  <!-- ornate outer border -->
-  <rect x="8" y="8" width="784" height="434" rx="28" stroke="url(#esoGold)" stroke-width="2" fill="none"/>
-  <rect x="18" y="18" width="764" height="414" rx="22" stroke="#3a2a55" stroke-width="1" fill="none" opacity="0.8"/>
-  <!-- corner sigil circles -->
-  <circle cx="40" cy="40" r="18" stroke="#d4a017" stroke-width="1.5" fill="none"/>
-  <circle cx="40" cy="40" r="10" stroke="#7b5cff" stroke-width="1" fill="none"/>
-  <polygon points="40,28 46,40 40,52 34,40" fill="#d4a017" opacity="0.7"/>
-  <circle cx="760" cy="40" r="18" stroke="#d4a017" stroke-width="1.5" fill="none"/>
-  <circle cx="760" cy="40" r="10" stroke="#7b5cff" stroke-width="1" fill="none"/>
-  <polygon points="760,28 766,40 760,52 754,40" fill="#d4a017" opacity="0.7"/>
-  <circle cx="40" cy="410" r="18" stroke="#d4a017" stroke-width="1.5" fill="none"/>
-  <circle cx="40" cy="410" r="10" stroke="#7b5cff" stroke-width="1" fill="none"/>
-  <polygon points="40,398 46,410 40,422 34,410" fill="#d4a017" opacity="0.7"/>
-  <circle cx="760" cy="410" r="18" stroke="#d4a017" stroke-width="1.5" fill="none"/>
-  <circle cx="760" cy="410" r="10" stroke="#7b5cff" stroke-width="1" fill="none"/>
-  <polygon points="760,398 766,410 760,422 754,410" fill="#d4a017" opacity="0.7"/>
-  <!-- top occult geometry -->
-  <circle cx="400" cy="28" r="14" stroke="#7b5cff" stroke-width="1" fill="none"/>
-  <polygon points="400,16 408,28 400,40 392,28" fill="none" stroke="#d4a017" stroke-width="1"/>
-  <line x1="60" y1="28" x2="370" y2="28" stroke="#7b5cff" stroke-width="0.6" opacity="0.5"/>
-  <line x1="430" y1="28" x2="740" y2="28" stroke="#7b5cff" stroke-width="0.6" opacity="0.5"/>
-  <!-- bottom mirrored -->
-  <circle cx="400" cy="422" r="14" stroke="#7b5cff" stroke-width="1" fill="none"/>
-  <polygon points="400,410 408,422 400,434 392,422" fill="none" stroke="#d4a017" stroke-width="1"/>
+  <rect x="6" y="6" width="788" height="438" rx="26" stroke="url(#esoGold)" stroke-width="2"/>
+  <rect x="16" y="16" width="768" height="418" rx="20" stroke="#3a2a55" stroke-width="1" opacity="0.85"/>
+  <!-- corner seals: nested circles + pentagram hint -->
+  <g stroke="#d4a017" stroke-width="1.2">
+    <circle cx="38" cy="38" r="22"/><circle cx="38" cy="38" r="14" stroke="#7b5cff"/><circle cx="38" cy="38" r="6"/>
+    <polygon points="38,20 42,34 56,34 45,42 49,56 38,48 27,56 31,42 20,34 34,34" fill="none" stroke="#d4a017" stroke-width="0.8" opacity="0.7"/>
+  </g>
+  <g stroke="#d4a017" stroke-width="1.2">
+    <circle cx="762" cy="38" r="22"/><circle cx="762" cy="38" r="14" stroke="#7b5cff"/><circle cx="762" cy="38" r="6"/>
+    <polygon points="762,20 766,34 780,34 769,42 773,56 762,48 751,56 755,42 744,34 758,34" fill="none" stroke-width="0.8" opacity="0.7"/>
+  </g>
+  <g stroke="#d4a017" stroke-width="1.2">
+    <circle cx="38" cy="412" r="22"/><circle cx="38" cy="412" r="14" stroke="#7b5cff"/><circle cx="38" cy="412" r="6"/>
+  </g>
+  <g stroke="#d4a017" stroke-width="1.2">
+    <circle cx="762" cy="412" r="22"/><circle cx="762" cy="412" r="14" stroke="#7b5cff"/><circle cx="762" cy="412" r="6"/>
+  </g>
+  <!-- top all-seeing eye -->
+  <ellipse cx="400" cy="28" rx="26" ry="14" stroke="#7b5cff" stroke-width="1.2"/>
+  <circle cx="400" cy="28" r="6" fill="#d4a017" stroke="#7b5cff"/>
+  <circle cx="400" cy="28" r="2.5" fill="#11071c"/>
+  <line x1="70" y1="28" x2="360" y2="28" stroke="#7b5cff" stroke-width="0.6" opacity="0.55"/>
+  <line x1="440" y1="28" x2="730" y2="28" stroke="#7b5cff" stroke-width="0.6" opacity="0.55"/>
+  <!-- bottom magic circle fragment -->
+  <circle cx="400" cy="422" r="16" stroke="#d4a017" stroke-width="1"/>
+  <circle cx="400" cy="422" r="10" stroke="#7b5cff" stroke-width="0.8"/>
+  <polygon points="400,408 408,422 400,436 392,422" fill="none" stroke="#d4a017" stroke-width="1"/>
+  <!-- side runic ticks -->
+  <path d="M8 90 H22 M8 130 H18 M8 170 H22 M8 210 H16 M8 250 H22" stroke="#7b5cff" stroke-width="1.2" opacity="0.7"/>
+  <path d="M792 90 H778 M792 130 H782 M792 170 H778 M792 210 H784 M792 250 H778" stroke="#7b5cff" stroke-width="1.2" opacity="0.7"/>
+  <!-- mid geometric sigils -->
+  <polygon points="400,8 406,18 400,28 394,18" fill="#d4a017" opacity="0.8"/>
 </svg>
