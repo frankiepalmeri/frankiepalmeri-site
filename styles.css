@@ -306,7 +306,7 @@ html[data-theme="study"] .graffiti-title { display: flex; }
   display: none;
   width: 100%;
   height: auto;
-  max-height: clamp(120px, 26vw, 260px);
+  max-height: clamp(130px, 28vw, 280px);
   object-fit: contain;
   object-position: left center;
   filter: drop-shadow(0 6px 18px rgba(0, 0, 0, 0.55));
@@ -909,7 +909,7 @@ html[data-theme="base"] .card.shop-all .thumb {
 }
 .war-art {
   flex: 0 0 auto;
-  width: min(280px, 100%);
+  width: min(260px, 100%);
   filter: drop-shadow(0 0 12px color-mix(in srgb, var(--accent) 35%, transparent));
 }
 .war-art img { width: 100%; height: auto; }
@@ -980,6 +980,6 @@ footer.site-footer {
   .brand-title { font-size: 1.05rem; }
   .stream-shell { padding: 10px; }
   .stream-shell--chat .chat-wrap { inset: 10px; }
-  .graf-svg { max-height: clamp(110px, 34vw, 200px); }
+  .graf-svg { max-height: clamp(120px, 36vw, 210px); }
   html[data-theme="base"] .graffiti-title::before { width: 56px; height: 32px; }
 }

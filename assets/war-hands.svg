@@ -1,98 +1,193 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 200" role="img" aria-label="Support emblem">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 320" role="img" aria-label="Support the war effort — corporate seal">
   <title>Support the war effort</title>
   <defs>
-    <linearGradient id="sealBg" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#182030"/>
-      <stop offset="100%" stop-color="#0a0e16"/>
-    </linearGradient>
-    <linearGradient id="metal" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#eef2f7"/>
-      <stop offset="100%" stop-color="#b8c2d0"/>
+    <linearGradient id="navy" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1a2744"/>
+      <stop offset="55%" stop-color="#0c1428"/>
+      <stop offset="100%" stop-color="#060a14"/>
     </linearGradient>
     <linearGradient id="gold" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#e8d078"/>
-      <stop offset="100%" stop-color="#b89220"/>
+      <stop offset="0%" stop-color="#f0d78c"/>
+      <stop offset="45%" stop-color="#d4a84b"/>
+      <stop offset="100%" stop-color="#9a7020"/>
+    </linearGradient>
+    <linearGradient id="goldSoft" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#ffe9a8"/>
+      <stop offset="100%" stop-color="#c4922e"/>
+    </linearGradient>
+    <linearGradient id="metal" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#e8ecf2"/>
+      <stop offset="100%" stop-color="#9aa3b2"/>
+    </linearGradient>
+    <linearGradient id="skullFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#f5f0e6"/>
+      <stop offset="100%" stop-color="#c8c0b0"/>
     </linearGradient>
   </defs>
 
-  <!-- corporate seal -->
-  <circle cx="160" cy="100" r="88" fill="url(#sealBg)"/>
-  <circle cx="160" cy="100" r="88" fill="none" stroke="#c9a227" stroke-width="2.5"/>
-  <circle cx="160" cy="100" r="80" fill="none" stroke="#c9a227" stroke-width="0.75" opacity="0.4"/>
+  <!-- Outer seal -->
+  <circle cx="160" cy="160" r="152" fill="url(#navy)"/>
+  <circle cx="160" cy="160" r="152" fill="none" stroke="url(#gold)" stroke-width="5"/>
+  <circle cx="160" cy="160" r="142" fill="none" stroke="#c9a227" stroke-width="1.25" opacity="0.85"/>
+  <circle cx="160" cy="160" r="134" fill="none" stroke="#c9a227" stroke-width="0.6" opacity="0.35"/>
 
-  <!-- LEFT hand: elegant open palm silhouette (receiving) -->
-  <path fill="url(#metal)" d="
-    M 86 145
-    C 86 132, 96 124, 110 124
-    L 132 124
-    C 142 124, 148 130, 148 138
-    L 148 146
-    C 148 152, 143 156, 136 156
-    L 108 156
-    C 94 156, 86 150, 86 145 Z"/>
-  <!-- left fingers — slender rounded -->
-  <g fill="url(#metal)">
-    <rect x="92" y="98" width="9" height="30" rx="4.5"/>
-    <rect x="104" y="94" width="9" height="34" rx="4.5"/>
-    <rect x="116" y="96" width="9" height="32" rx="4.5"/>
-    <rect x="128" y="100" width="8" height="28" rx="4"/>
-  </g>
-  <!-- left thumb -->
-  <path fill="url(#metal)" d="M 136 130 C 150 124, 158 130, 158 138 C 158 146, 150 150, 140 148 L 136 144 Z"/>
-
-  <!-- RIGHT hand mirror -->
-  <path fill="url(#metal)" d="
-    M 234 145
-    C 234 132, 224 124, 210 124
-    L 188 124
-    C 178 124, 172 130, 172 138
-    L 172 146
-    C 172 152, 177 156, 184 156
-    L 212 156
-    C 226 156, 234 150, 234 145 Z"/>
-  <g fill="url(#metal)">
-    <rect x="219" y="98" width="9" height="30" rx="4.5"/>
-    <rect x="207" y="94" width="9" height="34" rx="4.5"/>
-    <rect x="195" y="96" width="9" height="32" rx="4.5"/>
-    <rect x="184" y="100" width="8" height="28" rx="4"/>
-  </g>
-  <path fill="url(#metal)" d="M 184 130 C 170 124, 162 130, 162 138 C 162 146, 170 150, 180 148 L 184 144 Z"/>
-
-  <!-- floating $ marks — geometric, flat gold (bank emblem) -->
-  <g fill="url(#gold)">
-    <!-- center -->
-    <g transform="translate(160 70) scale(1.05)">
-      <path d="M-2.5,-20 h5 v5.5
-        c12,1.5 15.5,8 15.5,15.5 c0,10 -8.5,13.5 -18,15.5
-        v7 c7,-1 12,-3.5 12,-10.5 h5
-        c0,12 -8.5,17 -17,18.5 v7 h-5 v-7
-        c-12,-1.5 -15.5,-8 -15.5,-15.5 c0,-10 8.5,-13.5 18,-15.5
-        v-7 c-7,1 -12,3.5 -12,10.5 h-5
-        c0,-12 8.5,-17 17,-18.5 z"/>
-    </g>
-    <!-- left -->
-    <g transform="translate(122 56) scale(0.68)">
-      <path d="M-2.5,-20 h5 v5.5
-        c12,1.5 15.5,8 15.5,15.5 c0,10 -8.5,13.5 -18,15.5
-        v7 c7,-1 12,-3.5 12,-10.5 h5
-        c0,12 -8.5,17 -17,18.5 v7 h-5 v-7
-        c-12,-1.5 -15.5,-8 -15.5,-15.5 c0,-10 8.5,-13.5 18,-15.5
-        v-7 c-7,1 -12,3.5 -12,10.5 h-5
-        c0,-12 8.5,-17 17,-18.5 z"/>
-    </g>
-    <!-- right -->
-    <g transform="translate(198 56) scale(0.68)">
-      <path d="M-2.5,-20 h5 v5.5
-        c12,1.5 15.5,8 15.5,15.5 c0,10 -8.5,13.5 -18,15.5
-        v7 c7,-1 12,-3.5 12,-10.5 h5
-        c0,12 -8.5,17 -17,18.5 v7 h-5 v-7
-        c-12,-1.5 -15.5,-8 -15.5,-15.5 c0,-10 8.5,-13.5 18,-15.5
-        v-7 c-7,1 -12,3.5 -12,10.5 h-5
-        c0,-12 8.5,-17 17,-18.5 z"/>
-    </g>
+  <!-- Rope / dentil ring -->
+  <g fill="none" stroke="#c9a227" stroke-width="2.2" opacity="0.7">
+    <circle cx="160" cy="160" r="146" stroke-dasharray="3.5 4.5"/>
   </g>
 
-  <!-- subtle base rail -->
-  <rect x="132" y="170" width="56" height="2.5" rx="1.25" fill="#c9a227" opacity="0.75"/>
+  <!-- Arc text: SUPPORT / WAR EFFORT -->
+  <defs>
+    <path id="arcTop" d="M 48,160 A 112,112 0 0,1 272,160"/>
+    <path id="arcBot" d="M 48,200 A 112,112 0 0,0 272,200"/>
+  </defs>
+  <text fill="url(#gold)" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" letter-spacing="3.2">
+    <textPath href="#arcTop" startOffset="50%" text-anchor="middle">SUPPORT THE WAR EFFORT</textPath>
+  </text>
+  <text fill="url(#gold)" font-family="Georgia, 'Times New Roman', serif" font-size="11" font-weight="600" letter-spacing="2.4" opacity="0.9">
+    <textPath href="#arcBot" startOffset="50%" text-anchor="middle">ORDER · STRENGTH · SIGNAL</textPath>
+  </text>
+
+  <!-- ===== SKULL + WINGS + LIGHTNING (top half of seal) ===== -->
+  <g transform="translate(160, 118) scale(0.92)">
+    <!-- Wings — stylized geometric, gold outline / navy fill -->
+    <!-- Left wing -->
+    <path fill="#0a1020" stroke="url(#gold)" stroke-width="2.2" stroke-linejoin="round"
+      d="M -18,-8
+         C -48,-28 -78,-22 -108,-48
+         L -96,-18
+         C -88,-8 -78,2 -70,6
+         L -92,8
+         C -78,18 -62,22 -48,20
+         L -72,28
+         C -58,34 -42,32 -30,26
+         L -18,8 Z"/>
+    <path fill="none" stroke="#f0d78c" stroke-width="1.1" opacity="0.7"
+      d="M -40,-6 C -62,-18 -82,-14 -98,-32
+         M -36,4 C -58,8 -74,12 -88,10
+         M -32,14 C -50,20 -64,22 -74,24"/>
+    <!-- Right wing -->
+    <path fill="#0a1020" stroke="url(#gold)" stroke-width="2.2" stroke-linejoin="round"
+      d="M 18,-8
+         C 48,-28 78,-22 108,-48
+         L 96,-18
+         C 88,-8 78,2 70,6
+         L 92,8
+         C 78,18 62,22 48,20
+         L 72,28
+         C 58,34 42,32 30,26
+         L 18,8 Z"/>
+    <path fill="none" stroke="#f0d78c" stroke-width="1.1" opacity="0.7"
+      d="M 40,-6 C 62,-18 82,-14 98,-32
+         M 36,4 C 58,8 74,12 88,10
+         M 32,14 C 50,20 64,22 74,24"/>
+
+    <!-- Skull -->
+    <ellipse cx="0" cy="-2" rx="28" ry="30" fill="url(#skullFill)" stroke="url(#gold)" stroke-width="1.8"/>
+    <!-- cheek taper -->
+    <path fill="url(#skullFill)" stroke="url(#gold)" stroke-width="1.5" stroke-linejoin="round"
+      d="M -22,18 Q -18,32 0,34 Q 18,32 22,18 L 16,14 Q 0,20 -16,14 Z"/>
+    <!-- eye sockets -->
+    <ellipse cx="-10" cy="-4" rx="7.5" ry="9" fill="#0a1020"/>
+    <ellipse cx="10" cy="-4" rx="7.5" ry="9" fill="#0a1020"/>
+    <!-- nasal cavity -->
+    <path fill="#0a1020" d="M 0,6 L -5,16 L 5,16 Z"/>
+    <!-- teeth -->
+    <g stroke="#0a1020" stroke-width="1.4" fill="none">
+      <line x1="-12" y1="26" x2="-12" y2="33"/>
+      <line x1="-4" y1="28" x2="-4" y2="34"/>
+      <line x1="4" y1="28" x2="4" y2="34"/>
+      <line x1="12" y1="26" x2="12" y2="33"/>
+    </g>
+    <!-- Lightning bolt on forehead -->
+    <path fill="#0a1020" stroke="url(#gold)" stroke-width="0.6"
+      d="M 2,-28 L -6,-10 L 0,-10 L -4,6 L 10,-8 L 2,-8 L 8,-28 Z"/>
+  </g>
+
+  <!-- Divider bar -->
+  <rect x="78" y="178" width="164" height="1.5" rx="0.75" fill="url(#gold)" opacity="0.55"/>
+
+  <!-- ===== GEOMETRIC CORPORATE HANDS collecting $ (bank-seal heraldry) ===== -->
+  <g fill="url(#metal)" stroke="#c9a227" stroke-width="0.75" stroke-linejoin="round">
+    <!-- LEFT open palm — elegant tapered fingers, cuff -->
+    <path d="M 74 250
+      C 74 238, 86 230, 100 230
+      L 130 230
+      C 142 230, 150 238, 150 248
+      L 150 255
+      C 150 262, 142 268, 132 268
+      L 98 268
+      C 82 268, 74 260, 74 250 Z"/>
+    <!-- cuff stripe -->
+    <path fill="none" stroke="#c9a227" stroke-width="1.2" d="M 80 258 H 144" opacity="0.55"/>
+    <!-- fingers: slender, slightly fanned, rounded tips -->
+    <path d="M 88 232 L 86 204 C 86 198, 92 196, 96 196 C 100 196, 104 198, 104 204 L 102 232 Z"/>
+    <path d="M 104 230 L 103 198 C 103 192, 109 190, 113 190 C 117 190, 121 192, 121 198 L 120 230 Z"/>
+    <path d="M 120 230 L 120 200 C 120 194, 126 192, 130 192 C 134 192, 138 194, 138 200 L 136 230 Z"/>
+    <path d="M 136 232 L 138 208 C 138 203, 143 201, 146 201 C 149 201, 152 203, 152 208 L 148 234 Z"/>
+    <!-- thumb -->
+    <path d="M 148 242 C 162 234, 172 240, 172 248 C 172 256, 164 260, 154 258 L 148 252 Z"/>
+  </g>
+
+  <g fill="url(#metal)" stroke="#c9a227" stroke-width="0.75" stroke-linejoin="round">
+    <!-- RIGHT mirror -->
+    <path d="M 246 250
+      C 246 238, 234 230, 220 230
+      L 190 230
+      C 178 230, 170 238, 170 248
+      L 170 255
+      C 170 262, 178 268, 188 268
+      L 222 268
+      C 238 268, 246 260, 246 250 Z"/>
+    <path fill="none" stroke="#c9a227" stroke-width="1.2" d="M 176 258 H 240" opacity="0.55"/>
+    <path d="M 232 232 L 234 204 C 234 198, 228 196, 224 196 C 220 196, 216 198, 216 204 L 218 232 Z"/>
+    <path d="M 216 230 L 217 198 C 217 192, 211 190, 207 190 C 203 190, 199 192, 199 198 L 200 230 Z"/>
+    <path d="M 200 230 L 200 200 C 200 194, 194 192, 190 192 C 186 192, 182 194, 182 200 L 184 230 Z"/>
+    <path d="M 184 232 L 182 208 C 182 203, 177 201, 174 201 C 171 201, 168 203, 168 208 L 172 234 Z"/>
+    <path d="M 172 242 C 158 234, 148 240, 148 248 C 148 256, 156 260, 166 258 L 172 252 Z"/>
+  </g>
+
+  <!-- Dollar signs — geometric gold, collected between hands -->
+  <g fill="url(#goldSoft)">
+    <!-- center large -->
+    <g transform="translate(160 210) scale(0.92)">
+      <path d="M-2.2,-18 h4.4 v5
+        c10.5,1.2 13.5,7 13.5,13.5 c0,8.5 -7.2,11.5 -15.5,13.2
+        v6 c6,-0.8 10.5,-3 10.5,-9 h4.4
+        c0,10.5 -7.5,15 -15,16.5 v6 h-4.4 v-6
+        c-10.5,-1.2 -13.5,-7 -13.5,-13.5 c0,-8.5 7.2,-11.5 15.5,-13.2
+        v-6 c-6,0.8 -10.5,3 -10.5,9 h-4.4
+        c0,-10.5 7.5,-15 15,-16.5 z"/>
+    </g>
+    <!-- left smaller -->
+    <g transform="translate(124 202) scale(0.58)">
+      <path d="M-2.2,-18 h4.4 v5
+        c10.5,1.2 13.5,7 13.5,13.5 c0,8.5 -7.2,11.5 -15.5,13.2
+        v6 c6,-0.8 10.5,-3 10.5,-9 h4.4
+        c0,10.5 -7.5,15 -15,16.5 v6 h-4.4 v-6
+        c-10.5,-1.2 -13.5,-7 -13.5,-13.5 c0,-8.5 7.2,-11.5 15.5,-13.2
+        v-6 c-6,0.8 -10.5,3 -10.5,9 h-4.4
+        c0,-10.5 7.5,-15 15,-16.5 z"/>
+    </g>
+    <!-- right smaller -->
+    <g transform="translate(196 202) scale(0.58)">
+      <path d="M-2.2,-18 h4.4 v5
+        c10.5,1.2 13.5,7 13.5,13.5 c0,8.5 -7.2,11.5 -15.5,13.2
+        v6 c6,-0.8 10.5,-3 10.5,-9 h4.4
+        c0,10.5 -7.5,15 -15,16.5 v6 h-4.4 v-6
+        c-10.5,-1.2 -13.5,-7 -13.5,-13.5 c0,-8.5 7.2,-11.5 15.5,-13.2
+        v-6 c-6,0.8 -10.5,3 -10.5,9 h-4.4
+        c0,-10.5 7.5,-15 15,-16.5 z"/>
+    </g>
+  </g>
+
+  <!-- Bottom gold rail -->
+  <rect x="118" y="278" width="84" height="2.5" rx="1.25" fill="url(#gold)" opacity="0.8"/>
+  <!-- tiny stars / seal marks -->
+  <g fill="url(#gold)" opacity="0.75">
+    <circle cx="160" cy="288" r="2"/>
+    <circle cx="148" cy="288" r="1.2"/>
+    <circle cx="172" cy="288" r="1.2"/>
+  </g>
 </svg>
