@@ -16,9 +16,6 @@
   --pad: 14px;
   --gap: 12px;
   --frame-pad: 14px;
-  --graf-1: #39ff14;
-  --graf-2: #00ff88;
-  --graf-outline: #003311;
 }
 
 * { box-sizing: border-box; }
@@ -50,9 +47,6 @@ html[data-theme="ascii"] {
   --radius: 2px;
   --scan: 1;
   --glow: 0 0 18px color-mix(in srgb, #39ff14 45%, transparent);
-  --graf-1: #39ff14;
-  --graf-2: #b8ff6a;
-  --graf-outline: #002208;
 }
 html[data-theme="ascii"] body {
   background:
@@ -60,10 +54,6 @@ html[data-theme="ascii"] body {
     radial-gradient(600px 360px at 95% 8%, #1a0020 0%, transparent 50%),
     #010603;
   text-shadow: 0 0 5px color-mix(in srgb, var(--accent) 35%, transparent);
-}
-html[data-theme="ascii"] .brand-title::before {
-  content: ">_ ";
-  color: var(--accent2);
 }
 html[data-theme="ascii"] .term-label,
 html[data-theme="ascii"] .matrix-rain,
@@ -99,7 +89,6 @@ html[data-theme="ascii"] .theme-switch { border-radius: 2px; }
 html[data-theme="ascii"] .theme-switch button { font-family: var(--mono); }
 html[data-theme="ascii"] .donate a,
 html[data-theme="ascii"] .stream-links a { border-radius: 2px; font-family: var(--mono); }
-html[data-theme="ascii"] .graffiti-title { display: flex; }
 
 /* ===== BASE (was Mix 2): Shadaloo + skull emblem ===== */
 html[data-theme="base"] {
@@ -113,11 +102,7 @@ html[data-theme="base"] {
   --font: "Segoe UI", Helvetica, Arial, sans-serif;
   --radius: 0;
   --glow: 0 0 16px color-mix(in srgb, #ff1a1a 35%, transparent);
-  --graf-1: #ff1a1a;
-  --graf-2: #ff6a00;
-  --graf-outline: #2a0000;
 }
-html[data-theme="base"] .brand-title,
 html[data-theme="base"] section.panel h2,
 html[data-theme="base"] .propaganda,
 html[data-theme="base"] .card .meta .name,
@@ -143,16 +128,10 @@ html[data-theme="base"] .card {
   clip-path: polygon(0 0, calc(100% - 14px) 0, 100% 14px, 100% 100%, 14px 100%, 0 calc(100% - 14px));
   border-width: 2px;
 }
-html[data-theme="base"] .brand-title {
-  text-transform: uppercase;
-  font-size: 1.4rem;
-  letter-spacing: 0.14em;
-}
 html[data-theme="base"] .panel-mark::before { content: "◆ "; color: var(--accent); }
 html[data-theme="base"] .theme-switch { border-radius: 0; }
 html[data-theme="base"] .donate a,
 html[data-theme="base"] .stream-links a { border-radius: 0; }
-html[data-theme="base"] .graffiti-title { display: flex; }
 html[data-theme="base"] section.panel {
   background:
     linear-gradient(180deg, color-mix(in srgb, var(--panel) 92%, #400000) 0%, var(--panel) 100%);
@@ -187,9 +166,6 @@ html[data-theme="study"] {
   --font: Georgia, "Times New Roman", serif;
   --radius: 18px;
   --glow: 0 0 22px color-mix(in srgb, #7b5cff 30%, transparent);
-  --graf-1: #d4a017;
-  --graf-2: #c9a0ff;
-  --graf-outline: #1a0830;
 }
 html[data-theme="study"] body {
   background:
@@ -201,10 +177,6 @@ html[data-theme="study"] .esoteric-layer { display: block; }
 html[data-theme="study"] .frame-svg.frame-study,
 html[data-theme="study"] .frame-eso,
 html[data-theme="study"] .occult-label { display: block; }
-html[data-theme="study"] .brand-title {
-  font-style: italic;
-  letter-spacing: 0.16em;
-}
 html[data-theme="study"] section.panel {
   backdrop-filter: blur(8px);
   background: color-mix(in srgb, var(--panel) 78%, transparent);
@@ -226,7 +198,6 @@ html[data-theme="study"] .card {
   background: color-mix(in srgb, var(--panel) 65%, #000);
   border-color: color-mix(in srgb, var(--accent2) 35%, var(--border));
 }
-html[data-theme="study"] .graffiti-title { display: flex; }
 
 /* overlays */
 .scanlines {
@@ -291,46 +262,6 @@ html[data-theme="study"] .graffiti-title { display: flex; }
   color: var(--accent);
   letter-spacing: 0.2em;
 }
-
-/* ===== GRAFFITI TITLE — FRANKIE PALMERI (straight-letter pieces; sole big logo) ===== */
-.graffiti-title {
-  display: none;
-  margin: 4px 0 14px;
-  user-select: none;
-  position: relative;
-  width: 100%;
-  max-width: 920px;
-  line-height: 0;
-}
-.graf-svg {
-  display: none;
-  width: 100%;
-  height: auto;
-  max-height: clamp(130px, 28vw, 280px);
-  object-fit: contain;
-  object-position: left center;
-  filter: drop-shadow(0 6px 18px rgba(0, 0, 0, 0.55));
-  pointer-events: none;
-}
-html[data-theme="ascii"] .graf-svg.graf-ascii,
-html[data-theme="base"] .graf-svg.graf-base,
-html[data-theme="study"] .graf-svg.graf-study {
-  display: block;
-}
-html[data-theme="base"] .graffiti-title::before {
-  content: "";
-  position: absolute;
-  right: 2%;
-  top: 8%;
-  width: clamp(72px, 16vw, 140px);
-  height: clamp(42px, 9vw, 80px);
-  background: url("assets/base-emblem.png") center/contain no-repeat;
-  opacity: 0.9;
-  filter: drop-shadow(0 0 10px #ff1a1aaa);
-  pointer-events: none;
-  z-index: 2;
-}
-
 
 .emblem {
   display: none;
@@ -447,9 +378,13 @@ header.site-header {
 }
 .brand-title {
   margin: 0;
-  font-size: 1.22rem;
-  letter-spacing: 0.04em;
-  line-height: 1.15;
+  color: color-mix(in srgb, var(--text) 88%, var(--accent));
+  font-family: "UnifrakturCook", "UnifrakturMaguntia", "Old English Text MT", serif;
+  font-size: clamp(2rem, 5vw, 3.6rem);
+  font-weight: 700;
+  line-height: 0.95;
+  letter-spacing: 0.015em;
+  text-shadow: 0 2px 10px color-mix(in srgb, var(--accent) 18%, transparent);
 }
 .brand-sub {
   margin: 2px 0 0;
@@ -980,6 +915,4 @@ footer.site-footer {
   .brand-title { font-size: 1.05rem; }
   .stream-shell { padding: 10px; }
   .stream-shell--chat .chat-wrap { inset: 10px; }
-  .graf-svg { max-height: clamp(120px, 36vw, 210px); }
-  html[data-theme="base"] .graffiti-title::before { width: 56px; height: 32px; }
 }
