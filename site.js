@@ -26,28 +26,56 @@
       .join('&');
   }
 
+  const CHANNEL_TRAILER = '2197231518';
+
+  function setPlayer(src, title) {
+    const player = document.getElementById('player');
+    if (!player) return;
+    player.innerHTML = '';
+    const playerFrame = document.createElement('iframe');
+    playerFrame.src = src;
+    playerFrame.allowFullscreen = true;
+    playerFrame.allow = 'autoplay; fullscreen';
+    playerFrame.title = title;
+    player.appendChild(playerFrame);
+  }
+
+  async function channelIsLive(user) {
+    const res = await fetch(
+      'https://api.ivr.fi/v2/twitch/user?login=' + encodeURIComponent(user)
+    );
+    if (!res.ok) throw new Error('status');
+    const data = await res.json();
+    return !!(data && data[0] && data[0].stream);
+  }
+
   function mountTwitch(user) {
     if (!user) return;
     const parents = embedParents();
-
-    const player = document.getElementById('player');
-    if (player) {
-      player.innerHTML = '';
-      const playerFrame = document.createElement('iframe');
-      playerFrame.src =
-        'https://player.twitch.tv/?channel=' +
-        encodeURIComponent(user) +
-        '&' +
-        parents +
-        '&muted=true';
-      playerFrame.allowFullscreen = true;
-      playerFrame.allow = 'autoplay; fullscreen';
-      playerFrame.title = 'Twitch live stream';
-      player.appendChild(playerFrame);
-    }
+    const liveSrc =
+      'https://player.twitch.tv/?channel=' +
+      encodeURIComponent(user) +
+      '&' +
+      parents +
+      '&muted=true';
+    const trailerSrc =
+      'https://player.twitch.tv/?video=' +
+      encodeURIComponent(CHANNEL_TRAILER) +
+      '&' +
+      parents +
+      '&autoplay=false';
 
     const link = document.getElementById('twitch-channel');
     if (link) link.href = 'https://www.twitch.tv/' + encodeURIComponent(user);
+
+    channelIsLive(user)
+      .then(function (live) {
+        if (live) setPlayer(liveSrc, 'Twitch live stream');
+        else setPlayer(trailerSrc, 'Channel trailer');
+      })
+      .catch(function () {
+        setPlayer(trailerSrc, 'Channel trailer');
+      });
   }
 
   /* ===== Dense Matrix rain (ASCII) ===== */
