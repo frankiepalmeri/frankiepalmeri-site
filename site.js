@@ -46,20 +46,6 @@
       player.appendChild(playerFrame);
     }
 
-    const chat = document.getElementById('chat');
-    if (chat) {
-      chat.innerHTML = '';
-      const chatFrame = document.createElement('iframe');
-      chatFrame.src =
-        'https://www.twitch.tv/embed/' +
-        encodeURIComponent(user) +
-        '/chat?' +
-        parents +
-        '&darkpopout';
-      chatFrame.title = 'Twitch chat';
-      chat.appendChild(chatFrame);
-    }
-
     const link = document.getElementById('twitch-channel');
     if (link) link.href = 'https://www.twitch.tv/' + encodeURIComponent(user);
   }

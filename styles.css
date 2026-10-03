@@ -472,7 +472,7 @@ section.panel h2 {
 /* stream + themed frames */
 .stream-layout {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) 320px;
+  grid-template-columns: minmax(0, 1fr);
   gap: var(--gap);
   align-items: stretch;
 }
